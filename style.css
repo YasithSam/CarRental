@@ -1,0 +1,54 @@
+/* typography classes */
+.font-baloo {
+  font-family: "Baloo Thambi 2", cursive;
+}
+
+.font-rale {
+  font-family: "Raleway", cursive;
+}
+
+.font-rubik {
+  font-family: "Rubik", cursive;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  background: -webkit-linear-gradient(left, #1773c9, #58dfe4);
+}
+
+.submit:hover {
+  background: -webkit-linear-gradient(left, #5178e0, #7579ff);
+}
+
+/*# sourceMappingURL=style.css.map */
