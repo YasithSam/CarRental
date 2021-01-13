@@ -1,3 +1,6 @@
+<?php
+  require ('./functions.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +49,18 @@
 			<label>
 			  <span>Email</span>
 			  <input type="email">
+			</label>
+			<label>
+				<span>Contact</span>
+				<input type="number">
+			</label>
+			<label>
+				<span>Date of Birth</span>
+				<input type="date">
+			</label>
+			<label>
+				<span>City</span>
+				<input type="text">
 			</label>
 			<label>
 			  <span>Password</span>
