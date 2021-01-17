@@ -1,0 +1,353 @@
+:root {
+    --app-sidebar-width: 240px;
+    --app-sidebar-min-width: 60px;
+    --app-header-height: 60px;
+    --app-padding: 1rem;
+ }
+ * {
+    box-sizing: border-box;
+  }
+ 
+ /* Base */
+ 
+ html,
+ body {
+    font-family: Inter, Arial, sans-serif;
+    background: #eff4f7;
+ }
+ 
+ html,
+ body,
+ .app-viewport {
+    height: 100%;
+    margin: 0;
+ }
+ 
+ .app-viewport.inspect * {
+    border: 1px solid red;
+ }
+ 
+ /* Grid Layout */
+ 
+ .app-viewport * {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ #item{
+     padding: 20px 20px 20px 20px;
+ }
+ .list-a{
+     padding: 0px 10px 0px 6px;
+ }
+ .app-viewport {
+    display: grid;
+    grid-template-columns: var(--app-sidebar-width) 1fr;
+    grid-template-rows: var(--app-header-height) 1fr;
+    grid-template-areas:
+       "AppSidebar AppHeader"
+       "AppSidebar AppMain";
+ }
+ 
+ .app-header {
+    grid-area: AppHeader;
+    margin-left: calc(var(--app-sidebar-width) * -1);
+    z-index: 2;
+ }
+ 
+ .app-nav,
+ .app-header,
+ .app-branding {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-items: flex-start;
+    color: #fff;
+ }
+ 
+ .app-nav {
+    padding: 0 var(--app-padding);
+    flex: auto;
+ }
+ 
+ .app-branding {
+    width: var(--app-sidebar-width);
+    padding: 0 var(--app-padding);
+ }
+ 
+ .app-main {
+    grid-area: AppMain;
+    overflow-y: auto;
+    z-index: 1;
+    padding: var(--app-padding);
+ }
+ 
+ .app-sidebar {
+    display: grid;
+    grid-area: AppSidebar;
+    margin-top: var(--app-header-height);
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 1;
+ }
+ 
+ .app-sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .app-sidebar-menu > li > a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-items: start;
+    padding: 5px 0;
+ }
+ 
+ .app-sidebar-menu > li > a > .menu-icon {
+    margin-left: 15px;
+ }
+ 
+ .app-sidebar-menu > li > a > span {
+    margin-left: 10px;
+ }
+ 
+ /* Color / Presentation Only */
+ 
+ .placeholder {
+    display: block;
+    height: 1200px;
+    background: rgba(0, 0, 0, 0.05);
+ }
+ 
+ .placeholder:after {
+    content: " ";
+ }
+ 
+ .app-viewport {
+    background: #e9ecef;
+ }
+ 
+ .app-header,
+ .app-sidebar-header {
+    background: #202020;
+ }
+ 
+ .app-sidebar {
+    background:  #003859;
+    font-size: 15px;
+    padding: 20px 0;
+ }
+ 
+ .app-sidebar-menu > li > a {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+ }
+ .btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 3px;
+    white-space: nowrap;
+    cursor: default;
+    z-index: 0;
+    line-height: 2.6em;
+    font-size: 1rem;
+  }
+  .btn .title {
+    vertical-align: -webkit-baseline-middle;
+  }
+  .btn-default {
+    color: #99a9b8;
+    text-shadow: none;
+    border: 1px solid #070e14;
+  }
+
+
+ 
+ .app-sidebar-menu > li.active > a,
+ .app-sidebar-menu > li > a:hover {
+    opacity: 1;
+ }
+ 
+ .app-icon {
+    font-size: 28px;
+    margin-right: 5px;
+    font-weight: 500;
+ }
+ 
+ .app-brand {
+    font-size: 130%;
+    font-weight: 500;
+    line-height: 1.2rem;
+ }
+ 
+ .app-nav-toggle,
+ .app-brand {
+    color: #fff;
+ }
+ 
+ /* Responsive */
+ 
+ @media screen and (max-width: 768px) {
+    .app-viewport {
+       grid-template-columns: var(--app-sidebar-min-width) 1fr;
+    }
+    
+    .app-header {
+       margin-left: calc(var(--app-sidebar-min-width) * -1);
+    }
+    
+    .app-icon {
+       font-size: 36px;
+       margin: 0;
+    }
+    
+    .app-branding {
+       width: var(--app-sidebar-min-width);
+       padding: 0;
+       justify-content: center;
+    }
+    
+    .app-brand {
+       display: none;
+    }
+    
+    .app-sidebar-menu > li {
+       width: var(--app-sidebar-min-width);
+    }
+    
+    .app-sidebar-menu > li > a {
+       display: block;
+       text-align: center;
+    }
+    
+    .app-sidebar-menu > li > a > span {
+       display: none;
+    }
+    
+    .app-sidebar-menu > li > a > .menu-icon {
+       margin: 0;
+       padding: 0;
+       font-size: 30px;
+    }
+ }
+ 
+ .section {
+    display: none;
+ }
+ 
+ /* Part of Demo Only */
+ 
+ .section h1 {
+    font-size: 18px;
+ }
+ 
+ .section.active {
+    display: block;
+ }
+ 
+ .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .serviceBox {
+    border: 1px solid #e5e4e4;
+    padding: 40px;
+    border-radius: 20px;
+    background: #f9f9f9;
+    position: relative;
+    z-index: 1;
+}
+.serviceBox .card-top{
+    background-color: #99a9b8;
+    
+}
+
+.serviceBox .count{
+    color: #F1921A;
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+
+.serviceBox .title{
+    color: #777;
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+.btn {
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    height: 40px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #84deee;
+  }
+  
+  .btn:hover {
+    background-color: #003859;
+  }
+  
+  
+
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    height: 100%;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+
+ 
+ @media screen and (max-width: 768px) {
+    .sparklines {
+       display: block;
+    }
+    
+    .sparklines > div {
+       margin: 0 0 20px !important;
+    }
+ }
+ 
