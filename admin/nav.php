@@ -14,13 +14,13 @@
     </a>
     </li>
     <li id="item">
-        <a href="#payment">
+        <a href="brands.php">
         <span class="gg-community" id="icon"></span>
         <span class="list-a">Brands</span>
     </a>
     </li>
     <li id="item">
-        <a href="#customers">
+        <a href="vehicles.php">
         <span class="fas fa-car" id="icon"></span>
         <span class="list-a">Vehicles</span>
     </a>
