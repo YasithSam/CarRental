@@ -75,7 +75,22 @@
                                     <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
                                     </td>
                                     <td>
-                                    <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                                        <button onclick="document.getElementById('id01').style.display='block'" id="btn-delete">Delete</button>
+                                        <div id="id01" class="modal">
+                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+                                            <form class="modal-content" action="delete.php" method="POST">
+                                            <div class="container">
+                                                <h1>Delete Account</h1>
+                                                <p>Are you sure you want to delete your account?</p>
+                                            
+                                                <div class="clearfix">
+                                                <input type="hidden" name="id_director" value="<?= $id ?>" />
+                                                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                                <input type="submit" id="button" name="del" value="<?php echo $row['id']; ?>" class="login-button">
+                                                </div>
+                                            </div>
+                                            </form>
+                                        </div>
                                     </td>
                                     </tr>
                             <?php $count++; } ?>
