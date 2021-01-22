@@ -2,7 +2,7 @@
 
  <ul class="app-sidebar-menu">
     <li class="active" id="item" style="padding-left: 25px;">
-        <a href="#dashboard">
+        <a href="./dashboard.php">
         <span class="gg-menu-grid-o" id="icon"></span>
         <span class="list-a" style="padding-left: 5px;">Dashboard</span>
         </a>
