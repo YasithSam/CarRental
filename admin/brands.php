@@ -22,9 +22,9 @@
             ---- App Content 
             --->
             <div class="container-fluid">
-              <h1 style="margin: 30px 0px 20px 10px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Admin Panel</h1>
+              <h1 style="margin: 30px 0px 20px 10px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Vehcile Types</h1>
               <hr class="hr-1">
-              <div class="row" style="margin: 100px 10px 0px 5px;">
+              <div class="row" style="margin: 50px 10px 0px 5px;">
                
                 <div class="column">
                   <div class="serviceBox">
