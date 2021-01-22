@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+require_once('./php/component.php');
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
  ?>
@@ -8,10 +8,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <html>
 <head>
 	<title>HOME</title>
-
+     <link rel="stylesheet" href="./style.css"/>
+     <link rel="stylesheet" href="./css/home.css"/>
 </head>
 <body>
-     <h1>Hello, <?php echo $_SESSION['user_name']; ?></h1>
+<div class="row">
+ <?php    
+  component();
+  component();
+  component();
+  ?>	
+</div>
      <a href="logout.php">Logout</a>
 </body>
 </html>
