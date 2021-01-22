@@ -64,14 +64,14 @@
                   <div class="serviceBox">
                      
                         <?php 
-                            $sql = "SELECT COUNT(*) AS Count FROM users";
+                            $sql = "SELECT COUNT(*) AS Count FROM vehicles";
                             $result = $con->query($sql);
                             $row = $result->fetch_assoc();
                             
                         ?>
                         
                             <h3 class="count"><?php  echo $row['Count'];?></h3>
-                            <h4><p class="title">Registered Users</p>
+                            <h4><p class="title">Registered Vehicles</p>
                             <button class="btn card_btn">Read More</button>
                        
                   </div>    
