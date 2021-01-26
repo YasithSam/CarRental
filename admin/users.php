@@ -10,6 +10,97 @@
 <link rel="stylesheet" href="../css/users.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+<style>
+
+    /* Delete Button*/
+
+  button {
+    background-color:transparent;
+    color: red;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+ 
+  /* Float cancel and delete buttons and add an equal width */
+  .cancelbtn, .deletebtn {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Add a color to the cancel button */
+  .cancelbtn {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  /* Add a color to the delete button */
+  .deletebtn {
+    background-color: #f44336;
+  }
+  
+  /* Add padding and center-align text to the container */
+  .container {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  /* The Modal (background) */
+  .datatable-container .datatable .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  
+  /* Modal Content/Box */
+  .datatable-container .datatable .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+   
+  /* The Modal Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+</style>
+
 <body>
         <?php include('../db/connection.php');?> 
         <div class="app-viewport inspect_">
@@ -26,7 +117,7 @@
             
             <div class="datatable-container">
                     <!-- ======= Header tools ======= -->
-                    <h1 style="margin: 20px 0px 10px 20px;"> User Details</h1>
+                    <h1 style="margin: 20px 0px 10px 20px; font-size:20px"> User Details</h1>
                     <hr>
                     <div class="header-tools">
                         <div class="search">
@@ -75,7 +166,22 @@
                                     <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
                                     </td>
                                     <td>
-                                    <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                                        <button onclick="document.getElementById('id01').style.display='block'">Delete</button>
+                                        <div id="id01" class="modal">
+                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+                                            <form class="modal-content" action="delete.php" method="POST">
+                                            <div class="container">
+                                                <h1>Delete Account</h1>
+                                                <p>Are you sure you want to delete your account?</p>
+                                            
+                                                <div class="clearfix">
+                                                    <input type="hidden" name="del" value="<?php $row['id'];?>" />
+                                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                                    <input type="submit" value="Delete">
+                                                </div>
+                                            </div>
+                                            </form>
+                                        </div>
                                     </td>
                                     </tr>
                             <?php $count++; } ?>

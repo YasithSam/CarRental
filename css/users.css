@@ -40,7 +40,7 @@
     margin: 30px 50px;
     margin-left: 50px;
     margin-right: 50px;
-    font-size: 12px;
+    font-size: 18px;
   }
   
   .btn {
@@ -59,9 +59,8 @@
     background: #84deee;
   }
   
-  .btn:hover {
-    background-color: #003859;
-  }
+
+  
 
   .datatable-container .header-tools {
     border-bottom: solid 1px var(--dt-border-color);
@@ -185,58 +184,10 @@
     border-bottom: solid 1px var(--dt-border-color);
   }
   
-  .datatable-container .datatable tbody tr:nth-child(even) {
-    background-color: var(--dt-even-row-color);
+  td{
+      font-size: 14px;
   }
-  
-  .datatable-container .datatable tbody tr:hover {
-    background-color: var(--dt-hover-cell-color);
+  th{
+      font-size: 16px;
   }
-  
-  .datatable-container .datatable tbody tr .available::after,
-  .datatable-container .datatable tbody tr .away::after,
-  .datatable-container .datatable tbody tr .offline::after {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  .datatable-container .datatable tbody tr .available::after {
-    content: "Online";
-    color: var(--dt-status-available-color);
-  }
-  
-  .datatable-container .datatable tbody tr .away::after {
-    content: "Away";
-    color: var(--dt-status-away-color);
-  }
-  
-  .datatable-container .datatable tbody tr .offline::after {
-    content: "Offline";
-    color: var(--dt-status-offline-color);
-  }
-  
-  .datatable-container .datatable tbody tr .available::before,
-  .datatable-container .datatable tbody tr .away::before,
-  .datatable-container .datatable tbody tr .offline::before {
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-right: 10px;
-    border-radius: 50%;
-    vertical-align: middle;
-  }
-  
-  .datatable-container .datatable tbody tr .available::before {
-    background-color: var(--dt-status-available-color);
-  }
-  
-  .datatable-container .datatable tbody tr .away::before {
-    background-color: var(--dt-status-away-color);
-  }
-  
-  .datatable-container .datatable tbody tr .offline::before {
-    background-color: var(--dt-status-offline-color);
-  }
-  
   
