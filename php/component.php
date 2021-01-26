@@ -1,32 +1,32 @@
 <?php
 
-function component(){
+function component($vehicle_title,$vehicles_brand,$vehicles_overview,$price_per_km,$city,$vimage1){
     $element ="
     
-    <div class=\"example-1 card\">
-        <div class=\"wrapper\">
-        
-            <div class=\"date\">
-                <span class=\"day\">12</span>
-                <span class=\"month\">Aug</span>
-                <span class=\"year\">2016</span>
-            </div>
+    <center>
+        <div class=\"example-1 card\" style=\"margin-top:20px; \">
+            <div class=\"wrapper\">
+            
+            
+                    
+                    <div class=\"image\">
+                        <img class=\"book-image\" src=\"$vimage1\"/>
+                    </div>
                 
-                <div class=\"image\">
-                    <img class=\"book-image\" src=\"https://bit.ly/2GkldBe\"/>
+                <div class=\"data\">
+                    <div class=\"content\">
+                    <span class=\"brand\" style=\"color:white\">[$vehicles_brand]</span>
+                    <span class=\"brand\" style=\"color:white\">Rs. $price_per_km per day</span>
+                    <br>
+                    <span class=\"brand\" style=\"color:white\">From: $city </span>
+                    <h1 class=\"title\"><a href=\"#\" class=\"cardTitle\">$vehicle_title</a></h1>
+                    <p class=\"text\" style=\"color:white\">$vehicles_overview</p>
+                    </div>
                 </div>
-            
-            <div class=\"data\">
-                <div class=\"content\">
-                <span class=\"author\">Jane Doe</span>
-                <h1 class=\"title\"><a href=\"#\" class=\"cardTitle\">Boxing icon has the will for a couple more fights</a></h1>
-                <p class=\"text\">The highly anticipated world championship fight will take place at 10am and is the second major boxing blockbuster in the nation after 43 years.</p>
-                </div>
+                
             </div>
-            
-        </div>
-    </div>   
-    
+        </div>   
+    </center>
     
     ";
     echo $element;

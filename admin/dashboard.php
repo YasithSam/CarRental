@@ -38,7 +38,7 @@
                         
                             <h3 class="count"><?php  echo $row['Count'];?></h3>
                             <h4><p class="title">Registered Users</p>
-                            <button class="btn card_btn">Read More</button>
+                            <button class="btn card_btn" onclick="location.href='./users.php'">Read More</button>
                        
                   </div>    
                 </div>
@@ -47,15 +47,15 @@
                   <div class="serviceBox">
                      
                         <?php 
-                            $sql = "SELECT COUNT(*) AS Count FROM users";
+                            $sql = "SELECT COUNT(*) AS Count FROM Brand";
                             $result = $con->query($sql);
                             $row = $result->fetch_assoc();
                             
                         ?>
                         
                             <h3 class="count"><?php  echo $row['Count'];?></h3>
-                            <h4><p class="title">Registered Users</p>
-                            <button class="btn card_btn">Read More</button>
+                            <h4><p class="title">Vehicle Types</p>
+                            <button class="btn card_btn" onclick="location.href='./brands.php'">Read More</button>
                        
                   </div>    
                 </div>
@@ -72,7 +72,7 @@
                         
                             <h3 class="count"><?php  echo $row['Count'];?></h3>
                             <h4><p class="title">Registered Vehicles</p>
-                            <button class="btn card_btn">Read More</button>
+                            <button class="btn card_btn" onclick="location.href='./vehicles.php'">Read More</button>
                        
                   </div>    
                 </div>
@@ -89,7 +89,7 @@
                         
                             <h3 class="count"><?php  echo $row['Count'];?></h3>
                             <h4><p class="title">Registered Users</p>
-                            <button class="btn card_btn">Read More</button>
+                            <button class="btn card_btn" onclick="location.href='./brands.php'">Read More</button>
                        
                   </div>    
                 </div>
