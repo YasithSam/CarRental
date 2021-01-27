@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body{background-image:url(background.jpg);
+     background-attachment:fixed;
+     background-size:cover;
+     background-position:center; }
+    </style>
     <meta charset="utf-8"/>
     <title>Registration</title>
     <link rel="stylesheet" href="./css/login.css"/>

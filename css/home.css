@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: linear-gradient(to right, #034378, #2d4e68);
+  background-image: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
@@ -115,11 +115,12 @@ body {
   font-size: 12px;
 }
 .example-1 .content {
-  background-color: #fff;
+  background-color: #003859;
   box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
 }
 .example-1 .title a {
-  color: gray;
+  color: white;
+  font-weight: bold;
 }
 
 .image {
@@ -134,3 +135,105 @@ body {
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.split {
+    height: 100%;
+    width: 60%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-right: 20px;
+  }
+  
+  .left {
+    left: 0;
+    height: 50%;
+    width: 30%;
+    background-color: white;
+    margin-top: 20px;
+    margin-right:20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+   
+  }
+  
+  .right {
+    right: 0;
+    background-color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+  
+  }
+  .select {
+    position: relative;
+    display: inline-block;
+    width: 60%;
+    color: black;
+  }
+  .select select {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    padding: .5rem 2.25rem .5rem 1rem;
+    line-height: 1.5;
+    color: black;
+    background-color: #eee;
+    border: 0;
+    border: 1px solid #D0D0D0;
+    border-radius: .25rem;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  /* Undo the Firefox inner focus ring */
+  .select select:focus:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+  /* Dropdown arrow */
+  .select:after {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    margin-top: -.15rem;
+    pointer-events: none;
+    border-top: .35rem solid;
+    border-right: .35rem solid transparent;
+    border-bottom: .35rem solid transparent;
+    border-left: .35rem solid transparent;
+  }
+  
+  .widget {
+    margin: 50px 0px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
+  /* Focus */
+  .select select:focus {
+    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+  }
+  
+  /* Active/open */
+  .select select:active {
+    color: #fff;
+    background-color: #0074d9;
+  }
+  
+  /* Hide the arrow in IE10 and up */
+  .select select::-ms-expand {
+    display: none;
+  }
