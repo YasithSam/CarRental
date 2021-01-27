@@ -2,7 +2,7 @@ body {
    background-image:linear-gradient(to right, #003859, #00A5C4) ;
 }
 .form {
-  margin: 50px auto;
+  margin: 100px auto;
   width: 300px;
   padding: 30px 25px;
   background: white;
@@ -27,7 +27,7 @@ h1.login-title {
   outline: none;
 }
 .login-button {
-  color: #fff;
+  color: #ffff;
   background: #55a1ff;
   border: 0;
   outline: 0;

@@ -26,7 +26,7 @@
             
             <div class="datatable-container">
                     <!-- ======= Header tools ======= -->
-                    <h1 style="margin: 20px 0px 10px 20px;"> User Details</h1>
+                    <h1 style="margin: 20px 0px 10px 20px;"> Vehicle Details</h1>
                     <hr>
                     <div class="header-tools">
                         <div class="search">
