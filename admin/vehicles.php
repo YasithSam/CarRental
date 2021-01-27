@@ -35,7 +35,7 @@
                         <div class="tools">
                         <ul>
                             <li>
-                             <button class="btn card_btn">Read More</button>
+                             <button class="btn card_btn">Add New Vehicle</button>
                            </li>
                         </ul>
                         </div>

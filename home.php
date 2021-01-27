@@ -34,7 +34,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </style>
 </head>
 <body>
-<?php include("./header.php");?>     
+<?php include("./header.php");?>  
+
+<div class="about-head">
+    <br /><br /><br />
+    <h1>Search For Vehicles</h1>
+    <h4>Car Listings</h4>
+</div>
+
+<br /><br />   
 
      <!-- <h4> Filter Cabs</h4>
      <h5> Vehicle types </h5>
@@ -93,7 +101,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
      
           <input type="submit" id="button" value="Search" class="login-button">
-
+  
      </form>
    </div>
 

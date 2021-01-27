@@ -52,39 +52,48 @@ div.transbox p {
 </style>
 </head>
 <body>
-
-
-
-<div class="header">
-    <img class="logo" src="Assets/4891.jpg" alt="CompanyLogo">
-    <a href="index.php">HireMe</a>
-
-    <!-- LOGING / Register BUTTON -->
-    <div class="header-right">
-        <button action="">
-	        <span>LOGIN / REGISTER</span>
-        </button>
-    </div>
-</div>
-
-<div class="nav">
-    <a class="active" href="#">HOME</a>
-    <a href="aboutus.php">ABOUT US</a>
-    <a href="home.php">CAR LISTING</a>
-</div>
-
+<?php include('./header.php');?>
+<!--
 <div class=body>
     <img class="bg" src="Assets/2440.jpg">
 </div>
+-->
+
+<div class="slider">
+    <div class="slide">
+    	<img src="Assets/night.jpg" />
+	</div>
+
+    <div class="slide">
+        <img src="Assets/night.jpg" />
+	</div>
+
+    <div class="slide">
+        <img src="Assets/night.jpg" />
+	</div>
+
+  	<div class="slide">
+        <img src="Assets/night.jpg" />
+	</div>
+
+  	<div class="slide">
+        <img src="Assets/night.jpg" />
+    </div>
+
+      <!-- buttons -->
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+</div>
 
 
+<br /><br /><br />
 <div class="description">
     <h1> <span>Find the Best</span> CarForYou</h1>
     <p> Find the perfect car for your ride from our amazing collection. 
         There's a car for every need, be it a wedding, airport drop or a family trip, 
         we have you covered. Ring us today to reserve your vehicle..</p>
 	<ul class="cards">	
-		<?php    
+	<?php    
 			$sql = "SELECT vehicle_title,vehicles_overview,vimage1 FROM vehicles order by rating DESC limit 3";
 			$result = $con->query($sql);
 			if(mysqli_num_rows($result)>0){
@@ -104,7 +113,8 @@ div.transbox p {
 	<p>What We Have</p>
   </div>
   <?php include('./php/brandsList.php')?>
-</div>
+</div> 
+
 
 
 <!-- Footer -->
@@ -144,3 +154,59 @@ div.transbox p {
 
 </body>
 </html>
+
+
+<script>
+const images = document.querySelectorAll(".slide"),
+  next = document.querySelector(".next"),
+  prev = document.querySelector(".prev");
+
+let current = 0;
+
+function changeImage() {
+  images.forEach(img => {
+    img.classList.remove("show");
+    img.style.display = "none";
+  });
+
+  images[current].classList.add("show");
+  images[current].style.display = "block";
+}
+
+// Calling first time
+changeImage();
+
+next.addEventListener("click", function() {
+  current++;
+
+  if (current > images.length - 1) {
+    current = 0;
+  } else if (current < 0) {
+    current = images.length - 1;
+  }
+
+  changeImage();
+});
+prev.addEventListener("click", function() {
+  current--;
+
+  if (current > images.length - 1) {
+    current = 0;
+  } else if (current < 0) {
+    current = images.length - 1;
+  }
+
+  changeImage();
+});
+
+// Auto change in 5 seconds
+
+setInterval(() => {
+  next.click();
+}, 5000);
+
+</script>
+
+
+
+

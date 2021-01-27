@@ -1,8 +1,7 @@
 <?php
 
 function verticalC($vehicle_title,$vehicles_overview,$vimage1){
-    $element ="              
-        
+    $element ="                
         <li class=\"cards__item\">
             <div class=\"card\">
                 <div class=\"card__image \" style=\"background-image: url(https://unsplash.it/800/600?image=82);\"></div>
