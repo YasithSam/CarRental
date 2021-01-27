@@ -3,7 +3,7 @@
 function component($vehicle_title,$vehicles_brand,$vehicles_overview,$price_per_km,$city,$vimage1){
     $element ="
     
-    <center>
+    
         <div class=\"example-1 card\" style=\"margin-top:20px; \">
             <div class=\"wrapper\">
             
@@ -26,7 +26,7 @@ function component($vehicle_title,$vehicles_brand,$vehicles_overview,$price_per_
                 
             </div>
         </div>   
-    </center>
+   
     
     ";
     echo $element;

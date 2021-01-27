@@ -1,10 +1,55 @@
+<?php
+  include('./php/verticalC.php');
+  include('./functions.php');
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>HOME</title>
-    <link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./style.css"/>
+	<link rel="stylesheet" href="./css/dashboard.css"/>
+	<link rel="stylesheet" href="./css/verticalList.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+div.background {
+  background-image: url('./Assets/night.jpg');
+  border: 2px solid black;
+  height: 500px;
+}
 
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  font-size: 32px;
+  color: #000000;
+  margin-left: 40%;
+  
+}
+.serviceBox{
+	border-radius: 600px;
+	background-color: red;
+	opacity: 0.8;
+}
+.serviceBox .count{
+   color: yellow;
+}
+.serviceBox .title{
+  color: white;
+}
+
+</style>
 </head>
 <body>
 
@@ -38,6 +83,27 @@
     <p> Find the perfect car for your ride from our amazing collection. 
         There's a car for every need, be it a wedding, airport drop or a family trip, 
         we have you covered. Ring us today to reserve your vehicle..</p>
+	<ul class="cards">	
+		<?php    
+			$sql = "SELECT vehicle_title,vehicles_overview,vimage1 FROM vehicles order by rating DESC limit 3";
+			$result = $con->query($sql);
+			if(mysqli_num_rows($result)>0){
+				while ($row = mysqli_fetch_assoc($result)){
+						verticalC($row['vehicle_title'],$row['vehicles_overview'],$row['vimage1']);
+				}
+			}
+			else{
+				echo "<h5>No Vehicles</h5>";
+			
+			}
+		
+		?>	
+</div>
+<div class="background">
+  <div class="transbox">
+	<p>What We Have</p>
+  </div>
+  <?php include('./php/brandsList.php')?>
 </div>
 
 
