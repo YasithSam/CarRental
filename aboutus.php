@@ -9,7 +9,10 @@
 <body>
 
 
-<?php include("./header.php");?>
+<?php 
+include("./header.php");
+include("./functions.php");
+?>
 
 <div class="about-head">
     <br /><br /><br />
