@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2021 at 02:10 PM
+-- Generation Time: Jan 29, 2021 at 09:12 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -24,14 +24,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `admins`
 --
 
-CREATE TABLE `admin` (
-  `id` int(10) NOT NULL,
-  `UserName` varchar(20) NOT NULL,
-  `Password` varchar(10) NOT NULL
+CREATE TABLE `admins` (
+  `user_name` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`user_name`, `password`) VALUES
+('test', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Brand`
+--
+
+CREATE TABLE `Brand` (
+  `id` int(10) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `Brand`
+--
+
+INSERT INTO `Brand` (`id`, `name`) VALUES
+(1, 'car'),
+(2, 'van'),
+(3, 'motor-bike'),
+(4, 'tuk tuk');
 
 -- --------------------------------------------------------
 
@@ -55,16 +82,50 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_name`, `password`, `email`, `contact_no`, `dob`, `address`, `city`) VALUES
-(2, 'test user', '202cb962ac59075b964b07152d234b70', 'test@gmail.com', '0762556655', '2019/04/03', NULL, 'colombo');
+(2, 'test user', '202cb962ac59075b964b07152d234b70', 'test@gmail.com', '0762556655', '2019/04/04', NULL, 'colombo'),
+(3, 'test', 'c4ca4238a0b923820dcc509a6f75849b', 'test', '', '', NULL, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicles`
+--
+
+CREATE TABLE `vehicles` (
+  `id` int(11) NOT NULL,
+  `vehicle_title` varchar(150) DEFAULT NULL,
+  `vehicles_brand` int(11) DEFAULT NULL,
+  `vehicles_overview` longtext DEFAULT NULL,
+  `price_per_km` int(11) DEFAULT NULL,
+  `city` varchar(20) NOT NULL,
+  `vimage1` varchar(120) DEFAULT NULL,
+  `vimage2` varchar(120) DEFAULT NULL,
+  `vimage3` varchar(120) DEFAULT NULL,
+  `rating` int(10) NOT NULL,
+  `status` int(10) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vehicles`
+--
+
+INSERT INTO `vehicles` (`id`, `vehicle_title`, `vehicles_brand`, `vehicles_overview`, `price_per_km`, `city`, `vimage1`, `vimage2`, `vimage3`, `rating`, `status`) VALUES
+(1, '2018 alto hybrid ', 1, 'shart term and long term for rent \r\nAuto Gear,A/C, Power Shatters, Power Mirror, Revers Camera, DVD Setup, Full Option good condition car', 60000, 'colombo', NULL, NULL, NULL, 0, 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `admins`
 --
-ALTER TABLE `admin`
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`user_name`);
+
+--
+-- Indexes for table `Brand`
+--
+ALTER TABLE `Brand`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -74,20 +135,31 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `vehicles`
 --
+ALTER TABLE `vehicles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_brand` (`vehicles_brand`);
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `vehicles`
+--
+ALTER TABLE `vehicles`
+  ADD CONSTRAINT `fk_brand` FOREIGN KEY (`vehicles_brand`) REFERENCES `Brand` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
