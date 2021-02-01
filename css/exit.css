@@ -1,0 +1,147 @@
+body {
+	padding: 0; 
+    margin: 0;
+    background-image: url('../Assets/b.jpg');
+    background-size: 100% 100%;
+}
+
+
+/*Header---------------*/
+
+.header {
+    overflow: hidden;
+    background-color: #ffffff00;
+    padding: 30px;
+}
+
+.header a {
+    float: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    border-radius:25px;
+    padding: 20px;
+    margin-right: 50px;
+
+    color:  #ffffff;
+    font: normal 75px 'Roboto', cursive;
+    margin: 0 0 10px;
+}
+    .header a span{
+        color:  #ff0000;
+    }
+    
+
+.header img.logo {
+    width: 60px;
+    height: 60px;
+    
+}
+
+.heading {
+    margin: 80px 0 0 80px;
+    font-size: 64px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .heading > div {
+    overflow: hidden;
+  }
+  .heading > div > p {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 117%;
+  }
+  
+  .red {
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px #000000;
+  }
+  
+  div.heading > div {
+    -webkit-animation-delay: 0;
+            animation-delay: 0;
+  }
+  div.heading > div:nth-child(2) > p {
+    -webkit-animation-delay: 0.05s;
+            animation-delay: 0.05s;
+  }
+  
+  div.heading > div {
+    -webkit-animation-delay: 0;
+            animation-delay: 0;
+  }
+  div.heading > div:nth-child(3) > p {
+    -webkit-animation-delay: 0.075s;
+            animation-delay: 0.075s;
+  }
+  
+  .slide-up {
+    text-shadow: 2px 2px #000000;
+    color: rgb(255, 255, 255);
+    -webkit-animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+            animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+  
+  @-webkit-keyframes slide-up {
+    0% {
+      transform: translateY(100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
+/*Question------*/
+
+.q{
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+/*
+.q_head{
+    font-size: 125px;
+    font-family: 'Brush Script MT';
+    color:rgb(0, 0, 0);
+    text-shadow: 2px 2px #ffffff;
+
+}
+
+.q p{
+    font-family: Copperplate;
+    font-size: 20px;
+    color:whitesmoke;
+    text-shadow: 2px 2px #000000;
+}
+*/
+button{
+    
+    height: 75px;
+    width: 200px;
+    background-color:#ff0000b7;
+    color:whitesmoke;
+    border:none;
+    border-radius: 20px;
+    font-size:25px;
+    font: normal 25px 'Roboto', cursive;
+      
+  }
+
