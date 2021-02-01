@@ -98,13 +98,11 @@ img {
   color: #696969;
   font-size: 1.25rem;
   font-weight: 300;
-  letter-spacing: 2px;
   text-transform: uppercase;
 }
 .card__text {
   flex: 1 1 auto;
   font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
+  
 }
 
