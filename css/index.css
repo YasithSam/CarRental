@@ -1,12 +1,7 @@
 /*Home page css---------------*/
 
 /*Header---------------*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-}
+
 :root {
     --darkgray: #212329;
     --brightred: #F9423D;
@@ -14,8 +9,9 @@
     --lightred: #F9433DCC;
 }
 body {
+    margin: 0;
+    padding: 0;
     
-    height: 100vh;
 }
 .nav-container {
     width: 100%;
@@ -26,7 +22,7 @@ body {
     grid-template-columns: 0.2fr auto 1fr;
     align-items: center;
     height: 80px;
-    width: 90%;
+    width: 100%;
     max-width: 1720px;
     margin: 0 auto;
 }
@@ -489,67 +485,72 @@ section {
 /* Image slider ------ */
 
 
-.slider {
-  height: 500px;
-  width: 100%;
+/* Slider----*/
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+
+
+/* Slideshow container */
+.slideshow-container {
+  width: 1000px;
   position: relative;
-  margin: auto;
 }
 
-.slide {
-    display: none;
-    height: 500px;
-    width: 100%;
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
-img {
-      height: 500px;
-      width: 100%;
-      filter: contrast(90%);
-      object-fit: cover;
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
-.caption {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 22px;
-    color: #fff;
-    padding: 8px 16px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 4px;
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
-a.prev,
-a.next {
-    position: absolute;
-    top: 50%;
-    font-size: 30px;
-    cursor: pointer;
-    user-select: none;
-    color: #ffffff;
-    padding: 12px;
-    transition: 0.2s;
+.active_dot {
+  background-color: #717171;
 }
 
-.next {
-    right: 20px;
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-.prev {
-    left: 20px;
-}
-
-.show {
-  animation: fade 0.5s ease-out;
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 @keyframes fade {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
 }
