@@ -48,7 +48,8 @@
                             <th>Id</th>
                             <th>Vehicle Name</th>
                             <th>Vehicle Type</th>
-                            <th>Vehicle Overview</th>
+                            <th>Capacity</th>
+                            <th>Rating</th>
                             <th>Price per km</th>
                             <th>City</th>
                             <th>Edit</th>
@@ -59,14 +60,15 @@
                         <tbody>
                             <?php
                                 $count=1;
-                                $sql = "SELECT vehicles.id,vehicles.vehicle_title,Brand.name,vehicles.vehicles_overview,vehicles.price_per_km,vehicles.city FROM vehicles,Brand where Brand.id=vehicles_brand";
+                                $sql = "SELECT vehicles.id,vehicles.vehicle_title,Brand.name,vehicles.seats,vehicles.rating,vehicles.price_per_km,vehicles.city FROM vehicles,Brand where Brand.id=vehicles_brand";
                                 $result = mysqli_query($con,$sql);
                                 while($row = mysqli_fetch_assoc($result)) 
                                 { ?>
                                     <td><?php echo $row["id"]; ?></td>
                                     <td><?php echo $row["vehicle_title"]; ?></td>
                                     <td><?php echo $row["name"]; ?></td>
-                                    <td><?php echo $row["vehicles_overview"]; ?></td>
+                                    <td><?php echo $row["seats"]; ?></td>
+                                    <td><?php echo $row["rating"]; ?></td>
                                     <td><?php echo $row["price_per_km"]; ?></td>
                                     <td><?php echo $row["city"]; ?></td>
                                     

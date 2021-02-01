@@ -26,7 +26,7 @@
     </a>
     </li>
     <li id="item">
-        <a href="#serverlogs">
+        <a href="./bookings.php">
         <span class="gg-pentagon-down" id="icon"></span>
         <span class="list-a">Bookings</span>
     </a>
