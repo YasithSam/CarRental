@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-body{background-image:url(background.jpg);
+body{background-image:url(b.jpg);
      background-attachment:fixed;
      background-size:cover;
      background-position:center; }

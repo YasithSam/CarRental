@@ -48,6 +48,10 @@ div.transbox p {
 .serviceBox .title{
   color: white;
 }
+body { 
+    padding: 0;
+    margin: 0;
+}
 
 </style>
 </head>
@@ -59,30 +63,28 @@ div.transbox p {
 </div>
 -->
 
-<div class="slider">
-    <div class="slide">
-    	<img src="Assets/night.jpg" />
-	</div>
+<div class="slideshow-container" style="width: 100%;">
+  <div class="mySlides" style="width: 100%;">
+      <img src="Assets/4891.jpg" style="width: 100%;">
+    <div class="text">Caption Text</div>
+  </div>
+  <div class="mySlides" style="width: 100%;">
+    
+      <img src="Assets/night.jpg" style="width: 100%;">
+    <div class="text">Caption Two</div>
+  </div>
+  <div class="mySlides" style="width: 100%;">
+    
+      <img src="Assets/night.jpg" style="width: 100%;"> 
+    <div class="text">Caption Three</div>
+  </div>
+</div>
+<br />
 
-    <div class="slide">
-        <img src="Assets/night.jpg" />
-	</div>
-
-    <div class="slide">
-        <img src="Assets/night.jpg" />
-	</div>
-
-  	<div class="slide">
-        <img src="Assets/night.jpg" />
-	</div>
-
-  	<div class="slide">
-        <img src="Assets/night.jpg" />
-    </div>
-
-      <!-- buttons -->
-      <a class="prev">&#10094;</a>
-      <a class="next">&#10095;</a>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
 </div>
 
 
@@ -92,21 +94,21 @@ div.transbox p {
     <p> Find the perfect car for your ride from our amazing collection. 
         There's a car for every need, be it a wedding, airport drop or a family trip, 
         we have you covered. Ring us today to reserve your vehicle..</p>
-	<ul class="cards">	
-	<?php    
-			$sql = "SELECT vehicle_title,vehicles_overview,vimage1 FROM vehicles order by rating DESC limit 3";
+        <ul class="cards"
+   <?php    
+			$sql = "SELECT vehicle_title,rating,price_per_km,vimage1 FROM vehicles order by rating DESC limit 3";
 			$result = $con->query($sql);
 			if(mysqli_num_rows($result)>0){
 				while ($row = mysqli_fetch_assoc($result)){
-						verticalC($row['vehicle_title'],$row['vehicles_overview'],$row['vimage1']);
+						verticalC($row['vehicle_title'],$row['rating'],$row['price_per_km'],$row['vimage1']);
 				}
 			}
 			else{
 				echo "<h5>No Vehicles</h5>";
 			
-			}
-		
-		?>	
+      }
+    ?>   
+  </ul>  
 </div>
 <div class="background">
   <div class="transbox">
@@ -157,56 +159,26 @@ div.transbox p {
 
 
 <script>
-const images = document.querySelectorAll(".slide"),
-  next = document.querySelector(".next"),
-  prev = document.querySelector(".prev");
 
-let current = 0;
+/* Slider script*/
+var slideIndex = 0;
+showSlides();
 
-function changeImage() {
-  images.forEach(img => {
-    img.classList.remove("show");
-    img.style.display = "none";
-  });
-
-  images[current].classList.add("show");
-  images[current].style.display = "block";
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active_dot", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active_dot";
+  setTimeout(showSlides, 5000); // Change image every 5 seconds
 }
 
-// Calling first time
-changeImage();
-
-next.addEventListener("click", function() {
-  current++;
-
-  if (current > images.length - 1) {
-    current = 0;
-  } else if (current < 0) {
-    current = images.length - 1;
-  }
-
-  changeImage();
-});
-prev.addEventListener("click", function() {
-  current--;
-
-  if (current > images.length - 1) {
-    current = 0;
-  } else if (current < 0) {
-    current = images.length - 1;
-  }
-
-  changeImage();
-});
-
-// Auto change in 5 seconds
-
-setInterval(() => {
-  next.click();
-}, 5000);
-
 </script>
-
-
-
-
