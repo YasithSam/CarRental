@@ -1,6 +1,7 @@
 <?php
-include('../db/connection.php');
 session_start();
+include('../db/connection.php');
+
 ?>
 
 <link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
@@ -27,7 +28,7 @@ session_start();
       <textarea name="overview" rows="10" cols="30" placeholder="overview"></textarea>
       <input type="text" placeholder="City" name="city" required />
       <input type="text" placeholder="Price per km" name="price" required />
-      <div class="avatar"><label>Add Image: </label><input type="file" name="file"></div>
+      <div class="avatar"><label>Add Image: </label><input type="file" name="image"></div>
       <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
     </form>
   </div>
