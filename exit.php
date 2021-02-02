@@ -31,8 +31,8 @@
     <!--<h1 class="q_head">Are you a?</h1> -->
 
 <!-- Sign in Buttons-->
-    <button type="button" action="">Sign up to drive</button>&emsp;
-        &nbsp;<button type="button" action="">Sign up to ride</button>
+    <button type="button" onclick="location.href='./owner.php';" >Sign up to drive</button>&emsp;
+        &nbsp;<button type="button" onclick="location.href='./registration.php';" >Sign up to ride</button>
         
 </div>
 </body>

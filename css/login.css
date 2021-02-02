@@ -1,9 +1,11 @@
 .form {
-  float:right;
-  margin-top: 200px;
+  float:left;
+  margin-top: 90px;
   margin-right: 90px;
+  margin-left: 50px;
   padding:30px 25px;
   width: 300px;
+  background-color:white;
 }
 
 h1.login-title {
@@ -35,7 +37,7 @@ button, input{
   border-radius: 320px;
   padding:16px;
   background-color: #ebecf0;
-  text-shadow: 1px 1px 0 #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
 }
 
 .login-input {
@@ -57,8 +59,8 @@ button, input{
   font-size:16px;
   border-radius: 320px;
   padding:16px;
-  background-color: #55a1ff;
-  text-shadow: #fff;
+  background-color: #FF0000;
+  text-shadow: #000;
 }
 .btn {
   display: block;
@@ -77,15 +79,73 @@ button, input{
   
 }
 .link {
-  color: #666;
+  color: #0000BB;
   font-size: 15px;
   text-align: center;
   margin-bottom: 0px;
 }
 .link a {
-  color: #666;
+  color: #0000BB;
 }
 h3 {
   font-weight: normal;
   text-align: center;
+}
+/*Header---------------*/
+
+.header {
+  overflow: hidden;
+  background-color: #ffffff00;
+  padding: 30px;
+}
+
+.header a {
+  float: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  border-radius:25px;
+  padding: 20px;
+  margin-right: 50px;
+
+  color:  #ffffff;
+  font: normal 75px 'Roboto', cursive;
+  
+}
+  .header a span{
+      color:  #ff0000;
+  }
+  
+
+.header img.logo {
+  width: 60px;
+  height: 60px;
+  
+}
+
+.heading {
+ 
+  font-size: 64px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+.heading > div {
+  overflow: hidden;
+}
+.heading > div > p {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  white-space: nowrap;
+  margin: 0;
+  line-height: 100%;
+}
+
+.red {
+  color: rgb(255, 0, 0);
+  text-shadow: 2px 2px #000000;
 }

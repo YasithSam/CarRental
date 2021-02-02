@@ -76,7 +76,7 @@
                                     <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
                                     </td>
                                     <td>
-                                    <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                                    <a href="delete-vehicle.php?id=<?php echo $_POST["id"]; ?>">Delete</a>
                                     </td>
                                     </tr>
                             <?php $count++; } ?>

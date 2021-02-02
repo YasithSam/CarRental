@@ -65,17 +65,17 @@ body {
 
 <div class="slideshow-container" style="width: 100%;">
   <div class="mySlides" style="width: 100%;">
-      <img src="Assets/4891.jpg" style="width: 100%;">
+      <img src="Assets/1.jpg" style="width: 100%;">
     <div class="text">Caption Text</div>
   </div>
-  <div class="mySlides" style="width: 100%;">
+  <div class="mySlides" style="width: 100%; height:600px">
     
-      <img src="Assets/night.jpg" style="width: 100%;">
-    <div class="text">Caption Two</div>
+    <img src="Assets/2.jpg" style="width: 100%; height:600px;">
+    <div class="text" style="text-align:right; margin-right:50px">Caption Two</div>
   </div>
   <div class="mySlides" style="width: 100%;">
     
-      <img src="Assets/night.jpg" style="width: 100%;"> 
+      <img src="Assets/3.jpg" style="width: 100%; height:600px"> 
     <div class="text">Caption Three</div>
   </div>
 </div>
