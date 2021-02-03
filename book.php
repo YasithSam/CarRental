@@ -9,7 +9,7 @@ $result = $con->query($query);
 $row = $result->fetch_assoc();
 
 
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type'] ==='user') {
     $u_id=$_SESSION['id'];
     ?>
 
@@ -65,5 +65,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 }
 else{
     header("Location: login.php");
+    echo"<h1> Only Users can make bookings</h1>";
 }    
 ?>
