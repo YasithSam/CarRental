@@ -12,11 +12,9 @@ body{background-image:url(background.jpg);
     <link rel="stylesheet" href="./css/login.css"/>
 </head>
 <body>
-    <form class="form" method="post" action="registration-check.php">
-        <h1 class="login-title" style="color: black;">Registration</h1>
+    <form class="form" method="post" action="owner-check.php">
+        <h1 class="login-title" style="color: black;">Register As A Driver</h1>
         <input type="text" class="login-input" name="name" placeholder="User Name" required />
-        <input type="text" class="login-input" name="email" placeholder="Email Adress" required/>
-        <input type="date" class="login-input" name="dob" placeholder="Date of Birth">
         <input type="number" class="login-input" name="phone" placeholder="Contact Number">
         <input type="text" class="login-input" name="city" placeholder="City">
         <input type="password" class="login-input" name="password" placeholder="Password" required />

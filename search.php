@@ -2,7 +2,7 @@
    <div class="row">  
      <form class="widget" action="./results.php" method="POST">
   
-          <h3> Filter Vehicles</h3>
+          <p class="filter_head"> Filter Vehicles</p>
           
           <div class="select">
                <select aria-label="Select menu example" id="brand" name="brand">
@@ -18,20 +18,7 @@
                     ?>
                </select>
           </div>
-          <div class="select">
-               <select aria-label="Select menu example" id="price" name="price">
-               <?php    
-                    $sql = "SELECT name FROM Brand";
-                    $result = $con->query($sql);
-                    while ($row = mysqli_fetch_assoc($result)){ 
-                         ?>
-                         <option value="<?php echo $row['name'];?>"><?php echo $row['name'];?></option>
-                     
-                         <?php
-                         } 
-                    ?>
-               </select>
-          </div>
+          
           <div class="select">
                <select aria-label="Select menu example" id="city" name="city">
                <?php    
@@ -70,8 +57,8 @@
                </select>
 
           </div>
-          <input type="submit" id="button" value="Search" class="login-button">
-  
+          <br />
+          <button class="button" type="submit" id="button"><i class="fa fa-search" >&#9;Search Car</i></button>
      </form>
    </div>
 

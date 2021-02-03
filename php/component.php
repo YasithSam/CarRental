@@ -17,7 +17,7 @@ function component($owner_id,$id,$vehicle_title,$vehicles_brand,$seats,$rating,$
             
                     
                     <div class=\"image\">
-                        <img class=\"book-image\" src=\"../CarRental/images/$vimage1\"/>
+                        <img class=\"book-image\" src=\"../CarRental/images/$vimage1\"/ style=\"height:100%\">
                     </div>
                 
                 <div class=\"data\">

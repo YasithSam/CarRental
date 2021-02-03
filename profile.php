@@ -13,16 +13,18 @@ include("./header.php");
 include('./db/connection.php');
 include('./php/list-b.php');
 session_start();
-$id=$_SESSION["id"];
-
-$sql = "SELECT * FROM users where id=$id";
+if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type'] ==='user') {
+  
+?>
+          <?php  
+           $id=$_SESSION["id"];
+           $sql = "SELECT * FROM users where id=$id";
                             $result = $con->query($sql);
                             $row = $result->fetch_assoc();
-
                             
 
-?>  
 
+           ?>                 
           <div id='sideflap' style="margin-top:80px;">
             <div id='userpic'></div>
             <div id='userstats'>
@@ -63,7 +65,7 @@ $sql = "SELECT * FROM users where id=$id";
                 </div>
               </div>
               
-              <div id='linkbtn'><a href="logout.php">Logout</a>
+              <div id='linkbtn'><a href="logout.php" style="color:white">Logout</a>
               
             </div>
           </div>
@@ -92,3 +94,89 @@ $sql = "SELECT * FROM users where id=$id";
 
 </html>
 
+<?php
+}
+else if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type'] ==='owner')
+{ 
+?>  
+     <?php  
+          $id=$_SESSION["id"];
+          
+          $sql = "SELECT * FROM driver where id=$id";
+          $result = $con->query($sql);
+                           $row = $result->fetch_assoc();
+
+          $sql3="SELECT vehicle_title,rating FROM vehicles where owner_id=$id";
+          $result3 = $con->query($sql3);
+          $row3 = $result3->fetch_assoc();        
+
+
+          ?>                 
+         <div id='sideflap' style="margin-top:80px;">
+           <div id='userpic'></div>
+           <div id='userstats'>
+             <div id='username'>
+               <?php  echo $_SESSION["user_name"];?>
+               <div id='usertags'><?php  echo $row["city"];?></div>
+             </div>
+             <div id='userbio'>
+               <div id='biotext'>
+                  My Vehicle:
+               </div>
+               <div id='biolinks'>
+                 <?php  echo $row3["vehicle_title"];?>          
+               </div>
+             </div>
+             <div id='userbio'>
+               <div id='biotext'>
+                 Ratings:
+               </div>
+               <div id='biolinks'>
+                 <?php  echo $row3["rating"] . "   Stars";?>          
+               </div>
+             </div>
+             
+             <div id='userbio'>
+               <div id='biotext'>
+                 Contact Number:
+               </div>
+               <div id='biolinks'>
+                 <?php  echo $row["contact_no"];?>          
+               </div>
+             </div>
+           
+             <div id='linkbtn'><a href="logout.php" style="color:white">Logout</a>
+             
+           </div>
+         </div>
+
+         <div id='bookshelf' style="margin-top: 80px;">
+           <h2 style="color:white; margin-left:20px;">My Bookings</h2>
+           <?php 
+           $sql2 = "SELECT * FROM booking where owner_id=$id";
+           $result2 = $con->query($sql2);   
+             if(mysqli_num_rows($result2)>0){
+               while ($row2 = mysqli_fetch_assoc($result2)){
+                   ComponentB($row2['id'],$row2['start'],$row2['end'],$row2['day']);
+               
+               }
+             }
+             else{
+               echo "<h5>No Bookings</h5>";
+             
+             }
+           ?>  
+           
+         </div>
+
+
+         </body>
+
+
+<?php
+}
+
+else{
+
+}
+?>

@@ -5,7 +5,7 @@ require_once('./php/list.php');
 require_once('./php/list-c.php');
 include('./db/connection.php');
 $brand=$_REQUEST['brand'];
-$price=$_REQUEST['price'];
+
 $city=$_REQUEST['city'];
 $status=$_REQUEST['status'];
 
@@ -36,11 +36,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <div class="column c80">
    <div class="column">
      <?php          
-          $sql = "SELECT vehicles.vehicle_title,Brand.name,vehicles.vehicles_overview,vehicles.price_per_km,vehicles.city,vehicles.vimage1 FROM vehicles,Brand where Brand.id=vehicles_brand and Brand.name='$brand' and vehicles.city='$city'";
+          
+          $sql = "SELECT vehicles.vehicle_title,vehicles.owner_id,vehicles.id,Brand.name,vehicles.seats,vehicles.rating,vehicles.status,vehicles.price_per_km,vehicles.city,vehicles.vimage1 FROM vehicles,Brand where Brand.id=vehicles_brand and Brand.name='$brand' and vehicles.city='$city'";
           $result = $con->query($sql);
           if(mysqli_num_rows($result)>0){
                while ($row = mysqli_fetch_assoc($result)){
-                    component($row['vehicle_title'],$row['name'],$row['vehicles_overview'],$row['price_per_km'],$row['city'],$row['vimage1']);
+                    component($row['owner_id'],$row['id'],$row['vehicle_title'],$row['name'],$row['seats'],$row['rating'],$row['status'],$row['price_per_km'],$row['city'],$row['vimage1']);
                }
           }
           else{
@@ -48,6 +49,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           
          }
      
+
+
+
+         
      ?>	
    </div>
 </div>  
