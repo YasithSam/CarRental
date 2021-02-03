@@ -73,10 +73,10 @@
                                     <td><?php echo $row["city"]; ?></td>
                                     
                                     <td>
-                                    <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
+                                    <a href="edit-vehicle.php?id=<?php echo $row["id"]; ?>">Edit</a>
                                     </td>
                                     <td>
-                                    <a href="delete-vehicle.php?id=<?php echo $_POST["id"]; ?>">Delete</a>
+                                    <a href="delete-vehicle.php?id=<?php echo $_row["id"];?>">Delete</a>
                                     </td>
                                     </tr>
                             <?php $count++; } ?>

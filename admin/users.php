@@ -2,10 +2,14 @@
 <html>
 <head></head>
 <link rel="stylesheet" href="../css/dashboard.css"/>
+
+<!--- Icons--->
 <link href='https://css.gg/menu-grid-o.css' rel='stylesheet'>
 <link href='https://css.gg/community.css' rel='stylesheet'>
 <link href='https://css.gg/pentagon-down.css' rel='stylesheet'>
 <link href='https://css.gg/user.css' rel='stylesheet'>
+
+
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../css/users.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -164,24 +168,11 @@
                                     <td><?php echo $row["city"]; ?></td>
                                     <td>
                                     <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
+                      
                                     </td>
                                     <td>
-                                        <button onclick="document.getElementById('id01').style.display='block'">Delete</button>
-                                        <div id="id01" class="modal">
-                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-                                            <form class="modal-content" action="delete.php" method="POST">
-                                            <div class="container">
-                                                <h1>Delete Account</h1>
-                                                <p>Are you sure you want to delete your account?</p>
-                                            
-                                                <div class="clearfix">
-                                                    <input type="hidden" name="del" value="<?php $row['id'];?>" />
-                                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                                    <input type="submit" value="Delete">
-                                                </div>
-                                            </div>
-                                            </form>
-                                        </div>
+                                    <a onclick='confirmationDelete($(this));return false;' href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                                        
                                     </td>
                                     </tr>
                             <?php $count++; } ?>
@@ -224,5 +215,13 @@
 
 
 </body>
+<script>
+function confirmationDelete(anchor)
+{
+   var conf = confirm('Are you sure want to delete this record?');
+   if(conf)
+      window.location=anchor.attr("href");
+}
+</script>
 </html>
 
