@@ -32,7 +32,7 @@ include "./functions.php";
 			header("Location: registration.php?error=The username is taken try another&$user_data");
 	        exit();
 		}else {
-           $sql2 = "INSERT INTO users(user_name, password, email,contact_no,dob,city) VALUES('$uname', '$pass', '$email','$contact','$dob','$city')";
+           $sql2 = "INSERT INTO users(user_name, password, email,contact_no,dob,city,role) VALUES('$uname', '$pass', '$email','$contact','$dob','$city','user')";
            $result2 = mysqli_query($con, $sql2);
            if ($result2) {
                 header("Location: registration.php");

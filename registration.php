@@ -21,7 +21,7 @@ body{background-image:url(Assets/b.jpg);
     <form class="form" method="post" action="registration-check.php">
         <h1 class="login-title" style="color: black;">Registration</h1>
         <input type="text" class="login-input" name="name" placeholder="User Name" required />
-        <input type="text" class="login-input" name="email" placeholder="Email Adress" required/>
+        <input type="email" class="login-input" name="email" placeholder="Email Adress" required/>
         <input type="date" class="login-input" name="dob" placeholder="Date of Birth">
         <input type="number" class="login-input" name="phone" placeholder="Contact Number">
         <input type="text" class="login-input" name="city" placeholder="City">
