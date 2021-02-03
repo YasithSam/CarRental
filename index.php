@@ -90,11 +90,14 @@ body {
 
 <br /><br /><br />
 <div class="description">
-    <h1> <span>Find the Best</span> CarForYou</h1>
-    <p> Find the perfect car for your ride from our amazing collection. 
-        There's a car for every need, be it a wedding, airport drop or a family trip, 
-        we have you covered. Ring us today to reserve your vehicle..</p>
-        <ul class="cards"
+  <h1> <span>Find the Best</span> CarForYou</h1>
+  <p> Find the perfect car for your ride from our amazing collection. 
+      There's a car for every need, be it a wedding, airport drop or a family trip, 
+      we have you covered. Ring us today to reserve your vehicle..
+  </p>
+</div>
+<div>
+  <ul class="cards">
    <?php    
 			$sql = "SELECT vehicle_title,rating,price_per_km,vimage1 FROM vehicles order by rating DESC limit 3";
 			$result = $con->query($sql);
@@ -118,6 +121,34 @@ body {
 </div> 
 
 
+<div class="slideshow-containers">
+    <br />
+    <p class="head-container">User Feedbacks</p>
+  
+  <div class="slide">
+    <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+    <p class="author">- John Keats</p>
+  </div>
+
+  <div class="slide">
+    <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+    <p class="author">- Ernest Hemingway</p>
+    </div>
+
+  <div class="slide">
+    <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+    <p class="author">- Thomas A. Edison</p>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<div class="dot-container">
+  <span class="f_dot" onclick="currentSlide(1)"></span> 
+  <span class="f_dot" onclick="currentSlide(2)"></span> 
+  <span class="f_dot" onclick="currentSlide(3)"></span> 
+</div>
 
 <!-- Footer -->
 
@@ -179,6 +210,35 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active_dot";
   setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+
+/*Lower slider*/
+var slideIndex = 1;
+showSlide(slideIndex);
+
+function plusSlides(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  var i;
+  var slides = document.getElementsByClassName("slide");
+  var dots = document.getElementsByClassName("f_dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
 
 </script>

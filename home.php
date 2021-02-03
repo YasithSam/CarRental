@@ -5,11 +5,7 @@ require_once('./php/list.php');
 require_once('./php/list-c.php');
 include('./db/connection.php');
 
-
-
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-  
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +31,3 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </body>
 </html>
           
-<?php
-}
-else{
-     header("Location: login.php");
-     exit();
-}
-?>

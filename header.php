@@ -1,5 +1,6 @@
 <?php
 include ('./db/connection.php');
+
 if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 
  ?>
