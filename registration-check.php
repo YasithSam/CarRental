@@ -35,7 +35,7 @@ include "./functions.php";
            $sql2 = "INSERT INTO users(user_name, password, email,contact_no,dob,city,role) VALUES('$uname', '$pass', '$email','$contact','$dob','$city','user')";
            $result2 = mysqli_query($con, $sql2);
            if ($result2) {
-                header("Location: registration.php");
+                header("Location: login.php");
                 echo("success");
                 
 	         exit();

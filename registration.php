@@ -19,7 +19,7 @@ body{background-image:url(Assets/b.jpg);
         </div>
     </div>
     <form class="form" method="post" action="registration-check.php">
-        <h1 class="login-title" style="color: black;">Registration</h1>
+        <h1 class="login-title">Registration for Rider</h1>
         <input type="text" class="login-input" name="name" placeholder="User Name" required />
         <input type="email" class="login-input" name="email" placeholder="Email Adress" required/>
         <input type="date" class="login-input" name="dob" placeholder="Date of Birth">
@@ -28,8 +28,9 @@ body{background-image:url(Assets/b.jpg);
         <input type="password" class="login-input" name="password" placeholder="Password" required />
         <input type="password" class="login-input" name="confirm_password" placeholder="Confirm Password" required/>
         <input type="submit" id="button" value="Register" class="login-button">
-        <p class="link"><a href="login.php">Click to Login</a></p>
+        <p class="link"><a href="login.php" style="color:white;">Click to Login</a></p>
     </form>
 
+  <script src="./js/validation.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 	<title>HOME</title>
      <link rel="stylesheet" href="./css/profile.css"/>
-     <link rel="stylesheet" href="./css/index.css"/>
+     <link rel="stylesheet" href="./css/home.css"/>
 
 </head>
 <body>
@@ -136,7 +136,7 @@ else if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['ty
                </div>
              </div>
              
-             <div id='userbio'>
+             <div id='userbio' style="margin-bottom:10px;">
                <div id='biotext'>
                  Contact Number:
                </div>
@@ -144,14 +144,15 @@ else if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['ty
                  <?php  echo $row["contact_no"];?>          
                </div>
              </div>
-           
+             <div><a href="./edit-vehicle-owner.php?id=<?php echo $id?>" style="color:white">Edit Vehicle</a>
+             <br>
              <div id='linkbtn'><a href="logout.php" style="color:white">Logout</a>
              
            </div>
          </div>
 
          <div id='bookshelf' style="margin-top: 80px;">
-           <h2 style="color:white; margin-left:20px;">My Bookings</h2>
+           <h2 style="color:black; margin-left:20px;">My Bookings</h2>
            <?php 
            $sql2 = "SELECT * FROM booking where owner_id=$id";
            $result2 = $con->query($sql2);   
