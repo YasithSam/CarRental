@@ -1,0 +1,239 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.cardTitle {
+  text-decoration: none;
+}
+
+.title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+.row {
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+.card {
+  float: left;
+  padding: 0 1.7rem;
+  width: 80%;
+}
+.card .menu-content {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.card .menu-content::before, .card .menu-content::after {
+  content: "";
+  display: table;
+}
+.card .menu-content::after {
+  clear: both;
+}
+.card .menu-content li {
+  display: inline-block;
+}
+.card .menu-content a {
+  color: #fff;
+}
+.card .menu-content span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "Open Sans";
+  transform: translate(-50%, 0);
+}
+.card .wrapper {
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+}
+.card .data {
+  float: right;
+  width: 60%;
+  height: 100%;
+}
+.card .data .content {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+}
+.card .author {
+  font-size: 12px;
+}
+.card .title {
+  margin-top: 10px;
+}
+.card .text {
+  height: 70px;
+  margin: 0;
+}
+.card input[type=checkbox] {
+  display: none;
+}
+.card input[type=checkbox]:checked + .menu-content {
+  transform: translateY(-60px);
+}
+
+.example-1 .date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #77d7b9;
+  color: #fff;
+  padding: 0.8em;
+}
+.example-1 .date span {
+  display: block;
+  text-align: center;
+}
+.example-1 .date .day {
+  font-weight: 700;
+  font-size: 24px;
+  text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.18);
+}
+.example-1 .date .month {
+  text-transform: uppercase;
+}
+.example-1 .date .month,
+.example-1 .date .year {
+  font-size: 12px;
+}
+.example-1 .content {
+  background-color: #120f1d;
+  box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+}
+.example-1 .title a {
+  color: white;
+  font-weight: bold;
+}
+
+.image {
+  float: left;
+  width: 40%;
+}
+
+.book-image {
+  width: 100%;
+  display: block;
+  height: 80%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.split {
+    height: 100%;
+    width: 60%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-right: 20px;
+  }
+  
+  .left {
+    left: 0;
+    height: 50%;
+    width: 30%;
+    background-color: white;
+    margin-top: 20px;
+    margin-right:20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+   
+  }
+  
+  .right {
+    right: 0;
+    background-color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+  
+  }
+  .select {
+    position: relative;
+    display: inline-block;
+    width: 60%;
+    color: black;
+  }
+  .select select {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    padding: .5rem 2.25rem .5rem 1rem;
+    line-height: 1.5;
+    color: black;
+    background-color: #eee;
+    border: 0;
+    border: 1px solid #D0D0D0;
+    border-radius: .25rem;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  /* Undo the Firefox inner focus ring */
+  .select select:focus:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+  /* Dropdown arrow */
+  .select:after {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    margin-top: -.15rem;
+    pointer-events: none;
+    border-top: .35rem solid;
+    border-right: .35rem solid transparent;
+    border-bottom: .35rem solid transparent;
+    border-left: .35rem solid transparent;
+  }
+  
+  .widget {
+    margin: 50px 0px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
+  /* Focus */
+  .select select:focus {
+    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+  }
+  
+  /* Active/open */
+  .select select:active {
+    color: #fff;
+    background-color: #0074d9;
+  }
+  
+  /* Hide the arrow in IE10 and up */
+  .select select::-ms-expand {
+    display: none;
+  }

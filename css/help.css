@@ -1,0 +1,65 @@
+
+
+  /*Help page-------------*/
+
+  .help-head {
+	height: 300px;
+	background-color: #120f1d;
+}
+
+.help-head h1 {
+	text-align: center;
+	color:#ffffff;
+}
+
+.help-head h4 {
+	text-align: center;
+	color:#ffffff;
+}
+
+.help-body p.helpP_head {
+	font-family: 'Trebuchet MS';
+	font-size: 35px;
+    color:#000000;
+    margin-left: 10px;
+}
+
+.help-body p.parai {
+	font-family: 'Trebuchet MS';
+	text-align: left;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.help-body p span {
+	font-family: 'Trebuchet MS';
+	font-size: 22.5px;
+	color:#010405;
+}
+
+.about-body p.paraii{
+	font-family: 'Trebuchet MS';
+	text-align: center;
+	font-size: 20px;
+
+}
+
+.faqHeader {
+    font-size: 27px;
+    margin: 20px;
+    text-align: center;
+}
+
+
+.panel-title{
+    margin-left:200px ;
+}
+
+.panel-body{
+    margin: 20px;
+    padding-bottom: 50px;
+}
+
+.panel-group{
+    padding-bottom: 20px;
+}
