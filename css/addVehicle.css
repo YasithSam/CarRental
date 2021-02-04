@@ -84,7 +84,7 @@
     color: #fff;
     background-color:#f0f0f0;
     font-family:helvetica;
-    background: #0f2439 no-repeat center top;
+    background: #000;
   }
   
   .body-content{
@@ -94,7 +94,13 @@
     width:800px;
     margin-left:auto;
     margin-right:auto; 
-    background: transparent;
+   
+  }
+  .date_field{
+    text-align:right;
+    background-color: #000;
+    color:white;
+    width:100%;
   }
   
   select,

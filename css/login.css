@@ -5,11 +5,11 @@
   margin-left: 50px;
   padding:30px 25px;
   width: 300px;
-  background-color:white;
+  background-color:rgba(255, 255, 255, 0.151);
 }
 
 h1.login-title {
-  color: #666;
+  color: rgb(255, 255, 255);
   margin: 0px auto 25px;
   font-size: 25px;
   font-weight: 300;
