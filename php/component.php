@@ -1,6 +1,6 @@
 <?php
-
 function component($owner_id,$id,$vehicle_title,$vehicles_brand,$seats,$rating,$status,$price_per_km,$city,$vimage1){
+
     if($status==0){
         $status="Booked";
         $color="red";
@@ -26,7 +26,7 @@ function component($owner_id,$id,$vehicle_title,$vehicles_brand,$seats,$rating,$
                     <input name=\"owid\" type=\"hidden\" value=\"$owner_id\"/>
                     <input name=\"id\" type=\"hidden\" value=\"$id\"/>
                     <span class=\"brand\" style=\"color:white\">[$vehicles_brand]</span>
-                    <span class=\"brand\" style=\"color:white\">Rs. $price_per_km per day</span>
+                    <span class=\"brand\" style=\"color:white\">Rs. $price_per_km per km</span>
                     <br>
                     <span class=\"brand\" style=\"color:white\">From: $city </span>
                     <h1 class=\"title\"><a href=\"#\" class=\"cardTitle\">$vehicle_title</a></h1>
