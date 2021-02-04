@@ -8,8 +8,16 @@
 <link href='https://css.gg/user.css' rel='stylesheet'>
 <link rel="stylesheet" href="../style.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<?php 
+include('../db/connection.php');
+session_start();
+
+if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
+
+?> 
 <body>
-        <?php include('../db/connection.php');?> 
+        
         <div class="app-viewport inspect_">
             
             <!-- 
@@ -81,15 +89,15 @@
                   <div class="serviceBox">
                      
                         <?php 
-                            $sql = "SELECT COUNT(*) AS Count FROM users";
+                            $sql = "SELECT COUNT(*) AS Count FROM booking";
                             $result = $con->query($sql);
                             $row = $result->fetch_assoc();
                             
                         ?>
                         
                             <h3 class="count"><?php  echo $row['Count'];?></h3>
-                            <h4><p class="title">Registered Users</p>
-                            <button class="btn card_btn" onclick="location.href='./brands.php'">Read More</button>
+                            <h4><p class="title">Bookings</p>
+                            <button class="btn card_btn" onclick="location.href='./bookings.php'">Read More</button>
                        
                   </div>    
                 </div>
@@ -106,4 +114,9 @@
 
 </body>
 </html>
+<?php
+}
+else{
+  header("Location: ../login.php");
+}
 

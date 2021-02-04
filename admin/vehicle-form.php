@@ -47,7 +47,7 @@
 
  }
  else{
-     header("Location: fuck.php");
+     header("Location: vehicles.php");
      exit();
  }
 

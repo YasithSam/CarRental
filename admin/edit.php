@@ -10,7 +10,7 @@ $row = mysqli_fetch_assoc($result);
 <head>
     <meta charset="utf-8">
     <title>Update Record</title>
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/edit.css" />
 </head>
     <body>
         

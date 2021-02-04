@@ -101,8 +101,16 @@
   }
 </style>
 
+<?php 
+include('../db/connection.php');
+session_start();
+
+if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
+ 
+?>
+  
 <body>
-        <?php include('../db/connection.php');?> 
+       
         <div class="app-viewport inspect_">
             
             <!-- 
@@ -124,10 +132,7 @@
                     <table class="datatable">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Car Name</th>
-                            <th>User Name</th>
-                            <th>Owner Name</th>
+                            <th>ID</th>      
                             <th>Start Time</th>
                             <th>End Time</th>
                             <th>Date</th>
@@ -141,35 +146,25 @@
                                 $count=1;
                                 $sql_query="Select * from booking;";
                                 $result = mysqli_query($con,$sql_query);
+                              
                                 while($row = mysqli_fetch_assoc($result)) 
                                 { ?>
+                                    <?php
+                                      $start=$row['start'];
+                                      $end=$row['end'];
+                                      $start=substr($start,0,-10);
+                                      $end=substr($end,0,-10);
+                                    
+                                    ?>
                                     <td><?php echo $row["id"]; ?></td>
-                                    <td><?php echo $row["user_name"]; ?></td>
-                                    <td><?php echo $row["email"]; ?></td>
-                                    <td><?php echo $row["contact_no"]; ?></td>
-                                    <td><?php echo $row["start"]; ?></td>
-                                    <td><?php echo $row["end"]; ?></td>
-                                    <td><?php echo $row["Date"]; ?></td>
+                                    <td><?php echo $start; ?></td>
+                                    <td><?php echo $end; ?></td>
+                                    <td><?php echo $row["day"]; ?></td>
                                     <td>
                                     <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
                                     </td>
                                     <td>
-                                        <button onclick="document.getElementById('id01').style.display='block'">Delete</button>
-                                        <div id="id01" class="modal">
-                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-                                            <form class="modal-content" action="delete.php" method="POST">
-                                            <div class="container">
-                                                <h1>Delete Account</h1>
-                                                <p>Are you sure you want to delete your account?</p>
-                                            
-                                                <div class="clearfix">
-                                                    <input type="hidden" name="del" value="<?php $row['id'];?>" />
-                                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                                    <input type="submit" value="Delete">
-                                                </div>
-                                            </div>
-                                            </form>
-                                        </div>
+                                    <a href="delete-booking.php?id=<?php echo $row["id"];?>">Delete</a>
                                     </td>
                                     </tr>
                             <?php $count++; } ?>
@@ -213,4 +208,11 @@
 
 </body>
 </html>
+<?php
+}
+else{
+  header("Location: ../login.php");
+}
+
+
 

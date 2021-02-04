@@ -1,7 +1,12 @@
 <?php
  include('../db/connection.php');
  session_start();
- ?>
+
+ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
+  
+?>
+  
+
 
  <link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
  <link rel="stylesheet" href="../css/addVehicle.css" type="text/css">
@@ -32,3 +37,10 @@
      </form>
    </div>
  </div> 
+
+ <?php
+ }
+ else{
+   header("Location: ../login.php");
+ }
+ ?>

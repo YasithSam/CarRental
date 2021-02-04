@@ -10,8 +10,16 @@
 <link rel="stylesheet" href="../css/users.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+<?php 
+include('../db/connection.php');
+
+session_start();
+if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
+  
+?>
+
 <body>
-        <?php include('../db/connection.php');?> 
+        
         <div class="app-viewport inspect_">
             
             <!-- 
@@ -30,15 +38,9 @@
                     <hr>
                     <div class="header-tools">
                         <div class="search">
-                        <input type="search" class="search-input" placeholder="Search..." />
+                        <button class="btn card_btn" onclick="location.href='./addVehicle.php'" >Add New Vehicle</button>
                         </div>
-                        <div class="tools">
-                        <ul>
-                            <li>
-                             <button class="btn card_btn" onclick="location.href='./addVehicle.php'" >Add New Vehicle</button>
-                           </li>
-                        </ul>
-                        </div>
+                       
                     </div>
 
                     <!-- ======= Table ======= -->
@@ -76,7 +78,7 @@
                                     <a href="edit-vehicle.php?id=<?php echo $row["id"]; ?>">Edit</a>
                                     </td>
                                     <td>
-                                    <a href="delete-vehicle.php?id=<?php echo $_row["id"];?>">Delete</a>
+                                    <a href="delete-vehicle.php?id=<?php echo $row["id"];?>">Delete</a>
                                     </td>
                                     </tr>
                             <?php $count++; } ?>
@@ -120,5 +122,12 @@
 
 
 </body>
+<?php
+}
+else
+{
+  header('Location: ../login.php');
+}
+?>
 </html>
 

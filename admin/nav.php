@@ -31,6 +31,12 @@
         <span class="list-a">Bookings</span>
     </a>
     </li>
+    <li id="item">
+        <a href="./logout.php">
+      
+        <span class="list-a">Log Out</span>
+    </a>
+    </li>
  </ul>
 
 </div>

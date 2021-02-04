@@ -8,8 +8,18 @@
 <link href='https://css.gg/user.css' rel='stylesheet'>
 <link rel="stylesheet" href="../style.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<?php 
+include('../db/connection.php');
+session_start();
+
+if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
+ 
+?>
+
+
 <body>
-        <?php include('../db/connection.php');?> 
+        
         <div class="app-viewport inspect_">
             
             <!-- 
@@ -104,4 +114,9 @@
 
 </body>
 </html>
+<?php
+}
+else{
+  header("Location: ../login.php");
+}
 

@@ -105,8 +105,16 @@
   }
 </style>
 
+<?php 
+include('../db/connection.php');
+session_start();
+
+if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
+
+
+?> 
 <body>
-        <?php include('../db/connection.php');?> 
+        
         <div class="app-viewport inspect_">
             
             <!-- 
@@ -122,19 +130,12 @@
             <div class="datatable-container">
                     <!-- ======= Header tools ======= -->
                     <h1 style="margin: 20px 0px 10px 20px; font-size:20px"> User Details</h1>
-                    <hr>
-                    <div class="header-tools">
-                        <div class="search">
-                        <input type="search" class="search-input" placeholder="Search..." />
-                        </div>
-                        <div class="tools">
-                        <ul>
-                            <li>
-                             <button class="btn card_btn">Read More</button>
-                           </li>
-                        </ul>
-                        </div>
+                    <div class="search">
+                        <button class="btn card_btn" style="width:20%;" onclick="location.href='../registration.php'" >Add New User</button>
                     </div>
+
+                    <hr>
+            
 
                     <!-- ======= Table ======= -->
                     <table class="datatable">
@@ -224,4 +225,9 @@ function confirmationDelete(anchor)
 }
 </script>
 </html>
+<?php
+}
+else{
+  header("Location: ../login.php");
+}
 
