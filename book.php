@@ -38,21 +38,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type']
             From :
         </label>
         <br>
-        <input type="date" name="dateFrom" value="<?php echo date('H:i'); ?>" />
+        <input type="date" class="date_field" name="dateFrom" value="<?php echo date('H:i'); ?>" />
         <br/>
         <br />
         <label>
             To :
         </label>
         <br>
-        <input type="date" name="dateTo" value="<?php echo date('H:i'); ?>" />
+        <input type="date" class="date_field" name="dateTo" value="<?php echo date('H:i'); ?>" />
         <br />
         <br />
         <label>
             Date :
         </label>
         <br>
-        <input type="date" name="date" value="<?php echo date("y-m-d"); ?>" />
+        <input type="date" class="date_field" name="date" value="<?php echo date("y-m-d"); ?>" />
         <br />
         <br />
         <br />

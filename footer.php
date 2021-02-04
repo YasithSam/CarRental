@@ -2,13 +2,13 @@
 	<div class="footer-left">
 		<h3>Hire<span>Me</span></h3>
         <p class="footer-links">
-			<a href="#">Home</a>
+			<a href="home.php">Home</a>
 			·
-			<a href="#">Car Listing</a>
+			<a href="cars.php">Car Listing</a>
 			·
-			<a href="#">About</a>
+			<a href="aboutus.php">About</a>
 			·
-			<a href="#">Contact</a>
+			<a href="help.php">Help</a>
 		</p>
 		<p class="footer-company-name">Hire me © 2015</p> <br />
 		<div class="footer-icons">

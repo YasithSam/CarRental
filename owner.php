@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-body{background-image:url(background.jpg);
+body{background-image:url(Assets/b.jpg);
      background-attachment:fixed;
      background-size:cover;
      background-position:center; }
@@ -13,14 +13,14 @@ body{background-image:url(background.jpg);
 </head>
 <body>
     <form class="form" method="post" action="owner-check.php">
-        <h1 class="login-title" style="color: black;">Register As A Driver</h1>
+        <h1 class="login-title">Register As A Driver</h1>
         <input type="text" class="login-input" name="name" placeholder="User Name" required />
         <input type="number" class="login-input" name="phone" placeholder="Contact Number">
         <input type="text" class="login-input" name="city" placeholder="City">
         <input type="password" class="login-input" name="password" placeholder="Password" required />
         <input type="password" class="login-input" name="confirm_password" placeholder="Confirm Password" required/>
         <input type="submit" id="button" value="Register" class="login-button">
-        <p class="link"><a href="login.php">Click to Login</a></p>
+        <p class="link"><a href="login.php" style="color:white">Click to Login</a></p>
     </form>
 
 </body>

@@ -23,7 +23,8 @@ body{background-image:url(Assets/b.jpg);
        <label> <input type="text" class="login-input" name="username" placeholder="Username" autofocus="true"/> </label>    
        <label> <input type="password" class="login-input" name="password" placeholder="Password"/>  </label>
         <input type="submit" value="Login" name="submit" class="login-button"/>
-        <p class="link"><a href="registration.php">Not a member?</a></p>
+        <p class="link"><a href="registration.php" style="color:white;">Not a member?</a></p>
+        
   </form>
 </body>
 </html>

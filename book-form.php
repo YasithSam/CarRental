@@ -16,10 +16,13 @@ if (isset($_POST['title']) && isset($_POST['date'])
      $row = $result->fetch_assoc();
      $v_id= $row['id'];
      $sql2 = "INSERT INTO booking(car_id, user_id, owner_id,start,end,day) VALUES('$v_id', '$u_id', '$o_id','$from','$to','$day')";
-     echo "<h1>sql2</h2>";
+   
      $result2 = mysqli_query($con, $sql2);
-     if ($result2) {
-          header("Location: ./home.php");
+
+     $sql3="update vehicles set status='0' where id=$v_id";
+     $result3 = mysqli_query($con, $sql3);
+     if ($result2 && $result3) {
+          header("Location: ./cars.php");
           echo("success");
           exit();
      }else {

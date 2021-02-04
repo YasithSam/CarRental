@@ -20,13 +20,18 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	    exit();
 	}else{
 		// hashing the password
-        
-        if($uname === 'admin' && $pass === 'admin@123'){
+		$pass = md5($pass);
+		
+		$sql3 = "SELECT * FROM admins WHERE user_name='$uname' AND password='$pass'";
+		$result3 = mysqli_query($con, $sql3);
+		$row3 = mysqli_fetch_assoc($result3);
+        if($row3['user_name'] === $uname && $row3['password']==$pass){
+			$_SESSION['user_name']=$row3['user_name'];
+			$_SESSION['type']='admin';
 			header("Location: admin/dashboard.php");
-			$_SESSION['user_name']='admin';
 			exit();
 		}
-        $pass = md5($pass);
+      
 		$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
 		$result = mysqli_query($con, $sql);
 		$sql2 = "SELECT * FROM driver WHERE user_name='$uname' AND password='$pass'";
@@ -39,13 +44,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             	$_SESSION['user_name'] = $row['user_name'];
 				$_SESSION['id'] = $row['id'];
 				$_SESSION['type'] = $row['role'];
-            	header("Location: index.php");
+            	header("Location: home.php");
 		        exit();
 			}else if($row2['user_name'] === $uname && $row2['password'] === $pass && $row2['role']==='owner'){
 					$_SESSION['user_name'] = $row2['user_name'];				
 					$_SESSION['id'] = $row2['id'];
 					$_SESSION['type'] = $row2['role'];
-					header("Location: index.php");
+					header("Location: home.php");
 					exit();
 			 }
 			 else{

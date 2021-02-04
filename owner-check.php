@@ -33,10 +33,15 @@ include "./functions.php";
            $sql2 = "INSERT INTO driver(user_name, password,city,contact_no,role) VALUES('$uname', '$pass','$city','$contact','owner')";
            $result2 = mysqli_query($con, $sql2);
            if ($result2) {
-                header("Location: login.php");
+                $sql_query="Select * from driver order by id desc limit 1;";
+                $result2 = mysqli_query($con,$sql_query);
+                $row2 = mysqli_fetch_assoc($result2);
+                $x=$row2['id'];
+                header("Location: ./owner-vehicle.php?id=$x");
                 echo("success");
+                exit();
                 
-	         exit();
+	        
            }else {
 	           	header("Location: owner.php?error=unknown error occurred");
 		        exit();
