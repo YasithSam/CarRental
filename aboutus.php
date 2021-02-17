@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
 <head>
 	<title>ABOUT US</title>
     <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 
 </head>
 <body>
 
 
 <?php 
-include("./header.php");
-include("./functions.php");
+
+include("./db/connection.php");
+session_start();
+
+//Header
+include("./includes/header.php");
+
 ?>
 
 <div class="about-head">
@@ -36,6 +40,6 @@ include("./functions.php");
 <br /><br />
 
 <!-- Footer -->
-<?php include("./footer.php")?>
+<?php include("./includes/footer.php")?>
 </body>
 </html>
