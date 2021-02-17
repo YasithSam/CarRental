@@ -2,13 +2,10 @@
 <html>
 <head></head>
 <link rel="stylesheet" href="../css/dashboard.css"/>
-<link href='https://css.gg/menu-grid-o.css' rel='stylesheet'>
-<link href='https://css.gg/community.css' rel='stylesheet'>
-<link href='https://css.gg/pentagon-down.css' rel='stylesheet'>
-<link href='https://css.gg/user.css' rel='stylesheet'>
-<link rel="stylesheet" href="../style.css"/>
+
+<link rel="stylesheet" href="../css/style.css"/>
 <link rel="stylesheet" href="../css/users.css"/>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 
 <?php 
 include('../db/connection.php');
@@ -26,7 +23,7 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
             ---- App Header 
             --->
             
-           <?php include ('./common.php');?>
+           <?php include ('../includes/common.php');?>
             
             <!-- 
             ---- App Content 
@@ -38,7 +35,7 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
                     <hr>
                     <div class="header-tools">
                         <div class="search">
-                        <button class="btn card_btn" onclick="location.href='./addVehicle.php'" >Add New Vehicle</button>
+                        <button class="btn card_btn" onclick="location.href='./vehicle/addVehicle.php'" >Add New Vehicle</button>
                         </div>
                        
                     </div>
@@ -75,10 +72,10 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
                                     <td><?php echo $row["city"]; ?></td>
                                     
                                     <td>
-                                    <a href="edit-vehicle.php?id=<?php echo $row["id"]; ?>">Edit</a>
+                                    <a href="./vehicle/edit-vehicle.php?id=<?php echo $row["id"]; ?>">Edit</a>
                                     </td>
                                     <td>
-                                    <a href="delete-vehicle.php?id=<?php echo $row["id"];?>">Delete</a>
+                                    <a href="./vehicle/delete-vehicle.php?id=<?php echo $row["id"];?>">Delete</a>
                                     </td>
                                     </tr>
                             <?php $count++; } ?>
@@ -88,36 +85,13 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
                        </tbody>
                     </table>
 
-                    <!-- ======= Footer tools ======= -->
-                    <div class="footer-tools">
-                        <div class="list-items">
-                            Show
-                            <select name="n-entries" id="n-entries" class="n-entries">
-                                <option value="5">5</option>
-                                <option value="10" selected>10</option>
-                                <option value="15">15</option>
-                            </select>
-                            entries
-                        </div>
-
-                        <div class="pages">
-                            <ul>
-                                <li><span class="active">1</span></li>
-                                <li><button>2</button></li>
-                                <li><button>3</button></li>
-                                <li><button>4</button></li>
-                                <li><span>...</span></li>
-                                <li><button>9</button></li>
-                                <li><button>10</button></li>
-                            </ul>
-                        </div>
-                    </div>
+                   
           
             </div>
             <!-- 
             ---- App Sidebar
             --->
-            <?php include('./nav.php');?>
+            <?php include('../includes/nav.php');?>
         </div>
 
 
@@ -126,7 +100,7 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
 }
 else
 {
-  header('Location: ../login.php');
+  header('Location: ../index.php');
 }
 ?>
 </html>

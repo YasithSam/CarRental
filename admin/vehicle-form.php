@@ -37,7 +37,7 @@
                  header("Location: vehicles.php");
              }
              else{
-                 header("Location: addVehicle.php");
+                 header("Location: ./vehicle/addVehicle.php");
                  exit();
              }
            } 

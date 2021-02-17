@@ -2,12 +2,8 @@
 <html>
 <head></head>
 <link rel="stylesheet" href="../css/dashboard.css"/>
-<link href='https://css.gg/menu-grid-o.css' rel='stylesheet'>
-<link href='https://css.gg/community.css' rel='stylesheet'>
-<link href='https://css.gg/pentagon-down.css' rel='stylesheet'>
-<link href='https://css.gg/user.css' rel='stylesheet'>
-<link rel="stylesheet" href="../style.css"/>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" href="../css/style.css"/>
+
 
 <?php 
 include('../db/connection.php');
@@ -26,7 +22,7 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
             ---- App Header 
             --->
             
-           <?php include ('./common.php');?>
+           <?php include ('../includes/common.php');?>
             
             <!-- 
             ---- App Content 
@@ -107,16 +103,16 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
             <!-- 
             ---- App Sidebar
             --->
-            <?php include('./nav.php');?>
+            <?php include('../includes/nav.php');?>
         </div>
 
-        <script src="../js/dashboard.js"></script>
+       
 
 </body>
 </html>
 <?php
 }
 else{
-  header("Location: ../login.php");
+  header("Location: ../index.php");
 }
 
