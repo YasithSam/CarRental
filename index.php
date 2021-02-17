@@ -1,43 +1,30 @@
-<html>
+<!DOCTYPE html>
 <head>
-    <title>Initial Page</title>
-    <link rel="stylesheet" href="./css/index.css">
+<style>
+body{background-image:url(Assets/b.jpg);
+     background-attachment:fixed;
+     background-size:cover;
+     background-position:center; }
+    </style>
+    <meta charset="utf-8"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/index.css"/>
 </head>
-
 <body>
-
-<div class="header">
-    <!--<img class="logo" src="Assets/4891.jpg" alt="CompanyLogo"> -->
-    <a href="home.php">Hire<span>Me</span></a>
-    <div class="header-right">
-    </div>
-</div>
-
-
-<div class="heading">
-  <div>
-    <p class="slide-up"><span class="red">Hello there,</span></p>
-  </div>
-  <div>
-    <p class="slide-up">Welcome to HireMe.</p>
-  </div>
-  <!--<div>
-    <p class="slide-up">test</p>
-  </div> -->
-</div>
-<br /><br />
-
-<div class="q">
-    <!--<h1 class="q_head">Are you a?</h1> -->
-
-<!-- Sign in Buttons-->
-    <button type="button" onclick="location.href='./owner.php';" >Sign up to drive</button>&emsp;
-        &nbsp;<button type="button" onclick="location.href='./registration.php';" >Sign up to ride</button>
-        <div class="v_button">
-          <button type="button" onclick="location.href='./home.php';">Visitor</button>
+    <div class="header">
+        <!--<img class="logo" src="Assets/4891.jpg" alt="CompanyLogo"> -->
+        <a href="home.php">Hire<span>Me</span></a>
+        <div class="header-right">
         </div>
+    </div>
+    <form class="form" method="post" name="login" action="login-check.php">
+        <h1 class="login-title">Login</h1>
+       <label> <input type="text" class="login-input" name="username" placeholder="Username" autofocus="true"/> </label>    
+       <label> <input type="password" class="login-input" name="password" placeholder="Password"/>  </label>
+        <input type="submit" value="Login" name="submit" class="login-button"/>
+        <p class="link"><a href="exit.php" style="color:white;">Not a member?</a></p>
+        <p class="link"><a href="home.php" style="color:white;">Be a visitor</a></p>
         
-</div>
+  </form>
 </body>
-
 </html>

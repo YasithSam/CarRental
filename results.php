@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once('./php/component.php');
-require_once('./php/list.php');
-require_once('./php/list-c.php');
+require_once('./components/component.php');
+require_once('./components/list.php');
+require_once('./components/list-c.php');
 include('./db/connection.php');
 $brand=$_REQUEST['brand'];
 
@@ -18,11 +18,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
    <head>
        <title>HOME</title>
         <link rel="stylesheet" href="./css/home.css"/>
-        <link rel="stylesheet" href="./css/index.css"/>
+        <link rel="stylesheet" href="./css/cars.css"/>
         <link rel="stylesheet" href="./css/search.css"/>
    </head>
    <body>
-   <?php include("./header.php");?>  
+   <?php include("./includes/header.php");?>  
    
    <div class="about-head">
        <br /><br /><br />
@@ -32,7 +32,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
    
    <br /><br />   
    
-<?php include("./search.php")?>
+<?php include("./includes/search.php")?>
 <div class="column c80">
    <div class="column">
      <?php          
@@ -57,13 +57,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
    </div>
 </div>  
        
-    <?php include("./footer.php");?>      
+    <?php include("./includes/footer.php");?>      
    </body>
    </html>
    
 <?php 
 }else{
-        header("Location: login.php");
+        header("Location: index.php");
         exit();
 }
 ?>

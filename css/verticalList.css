@@ -14,7 +14,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "liga" on;
+  
   
 }
 img {
@@ -90,12 +90,7 @@ img {
   font-size: 1.25rem;
   font-weight: 300;
   text-transform: uppercase;
-}/*
-.card__text {
-  flex: 1 1 auto;
-  font-size: 0.875rem;
-  
-}*/
+}
 @media (min-width: 56rem) {
   .cards__item {
     width: 33.3333%;

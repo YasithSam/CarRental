@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>HOME</title>
@@ -9,9 +8,9 @@
 <body>
 
 <?php 
-include("./header.php");
+include("./includes/header.php");
 include('./db/connection.php');
-include('./php/list-b.php');
+include('./components/list-b.php');
 session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type'] ==='user') {
   
@@ -77,7 +76,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type']
             $result2 = $con->query($sql2);   
               if(mysqli_num_rows($result2)>0){
                 while ($row2 = mysqli_fetch_assoc($result2)){
-                    ComponentB($row2['id'],$row2['start'],$row2['end'],$row2['day']);
+                    
+                    ComponentB($row2['id'],$row2['car_id'],$row2['start'],$row2['end'],$row2['day']);
                 
                 }
               }
@@ -144,7 +144,7 @@ else if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['ty
                  <?php  echo $row["contact_no"];?>          
                </div>
              </div>
-             <div><a href="./edit-vehicle-owner.php?id=<?php echo $id?>" style="color:white">Edit Vehicle</a>
+             <div><a href="./driver/edit-vehicle-owner.php?id=<?php echo $id?>" style="color:white">Edit Vehicle</a>
              <br>
              <div id='linkbtn'><a href="logout.php" style="color:white">Logout</a>
              
@@ -154,11 +154,12 @@ else if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['ty
          <div id='bookshelf' style="margin-top: 80px;">
            <h2 style="color:black; margin-left:20px;">My Bookings</h2>
            <?php 
+           
            $sql2 = "SELECT * FROM booking where owner_id=$id";
            $result2 = $con->query($sql2);   
              if(mysqli_num_rows($result2)>0){
                while ($row2 = mysqli_fetch_assoc($result2)){
-                   ComponentB($row2['id'],$row2['start'],$row2['end'],$row2['day']);
+                   ComponentB($row2['id'],$row2['car_id'],$row2['start'],$row2['end'],$row2['day']);
                
                }
              }

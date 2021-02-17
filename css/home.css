@@ -293,28 +293,7 @@ section {
 	margin: 0;
 }
 
-/* Footer social icons */
 
-.footer-distributed .footer-icons{
-	margin-top: 0px;
-}
-
-.footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	background-color:  #34333b;
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-
-	margin-right: 3px;
-	margin-bottom: 5px;
-}
 
 /* Footer Right */
 
@@ -571,7 +550,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 * {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
+
 
 .slideshow-containers {
     position: relative;

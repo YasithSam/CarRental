@@ -1,20 +1,19 @@
 <?php
-  include('./php/verticalC.php');
-  include('./functions.php');
-
+  include('./components/verticalC.php');
+  include('./db/connection.php');
+  session_start();
 
 ?>
 
 
 <!DOCTYPE html>
-<html>
 <head>
 	<title>HOME</title>
 	<link rel="stylesheet" href="./css/home.css">
-	<link rel="stylesheet" href="./style.css"/>
+	<link rel="stylesheet" href="./css/style.css"/>
 	<link rel="stylesheet" href="./css/dashboard.css"/>
 	<link rel="stylesheet" href="./css/verticalList.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 <style>
 div.background {
   background-image: url('./Assets/night.jpg');
@@ -56,12 +55,7 @@ body {
 </style>
 </head>
 <body>
-<?php include('./header.php');?>
-<!--
-<div class=body>
-    <img class="bg" src="Assets/2440.jpg">
-</div>
--->
+<?php include('./includes/header.php');?>
 
 <div class="slideshow-container" style="width: 100%;">
   <div class="mySlides" style="width: 100%;">
@@ -102,8 +96,10 @@ body {
   <p> Find the perfect car for your ride from our amazing collection. 
       There's a car for every need, be it a wedding, airport drop or a family trip, 
       we have you covered. Ring us today to reserve your vehicle..
+      
   </p>
 </div>
+
 <div>
   <ul class="cards">
    <?php    
@@ -125,38 +121,77 @@ body {
   <div class="transbox">
 	<p>What We Have</p>
   </div>
-  <?php include('./php/brandsList.php')?>
+  <div class="container-fluid">
+              <div class="row" style="margin: 50px 10px 0px 5px;">
+               
+                <div class="column">
+                  <div class="serviceBox">
+                        <?php 
+                            $sql = "SELECT COUNT(*) AS Count FROM vehicles where vehicles_brand=1";
+                            $result = $con->query($sql);
+                            $row = $result->fetch_assoc();
+                             
+                        ?>
+                        
+                            <h3 class="count"><?php  echo $row['Count'];?></h3>
+                            <h4><p class="title">Cars</p>
+                       
+                  </div>    
+                </div>
+
+                <div class="column">
+                  <div class="serviceBox">
+                     
+                        <?php 
+                            $sql = "SELECT COUNT(*) AS Count FROM vehicles where vehicles_brand=2";
+                            $result = $con->query($sql);
+                            $row = $result->fetch_assoc();
+                            
+                        ?>
+                        
+                            <h3 class="count"><?php  echo $row['Count'];?></h3>
+                            <h4><p class="title">Vans</p>
+                       
+                  </div>    
+                </div>
+                
+                <div class="column">
+                  <div class="serviceBox">
+                     
+                        <?php 
+                            $sql = "SELECT COUNT(*) AS Count FROM vehicles where vehicles_brand=3";
+                            $result = $con->query($sql);
+                            $row = $result->fetch_assoc();
+                            
+                        ?>
+                        
+                            <h3 class="count"><?php  echo $row['Count'];?></h3>
+                            <h4><p class="title">Motor-Bikes</p>
+                            
+                       
+                  </div>    
+                </div>
+                
+                <div class="column">
+                  <div class="serviceBox">
+                     
+                        <?php 
+                            $sql = "SELECT COUNT(*) AS Count FROM vehicles where vehicles_brand=4";
+                            $result = $con->query($sql);
+                            $row = $result->fetch_assoc();
+                            
+                        ?>
+                        
+                            <h3 class="count"><?php  echo $row['Count'];?></h3>
+                            <h4><p class="title">Tuk Tuk</p>
+                           
+                       
+                  </div>    
+                </div>
+             </div>
+</div> 
 </div> 
 
-
-<div class="slideshow-containers">
-    <br />
-    <p class="head-container">User Feedbacks.</p>
-  
-  <div class="slide">
-    <q>The booking and quote was completed with ease using the online application.</q>
-    <p class="author">- Lisse Whliworth -</p>
-  </div>
-
-  <div class="slide">
-    <q>Always fair and fast. Recommend it to everone.</q>
-    <p class="author">- Fred jhonson -</p>
-    </div>
-
-  <div class="slide">
-    <q>Always good service and greate price. Love the app!</q>
-    <p class="author">- Graham Liewellyn-Berry -</p>
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-<div class="dot-container">
-  <span class="f_dot" onclick="currentSlide(1)"></span> 
-  <span class="f_dot" onclick="currentSlide(2)"></span> 
-  <span class="f_dot" onclick="currentSlide(3)"></span> 
-</div>
 
 <!-- Footer -->
 
@@ -172,23 +207,8 @@ body {
 			·
 			<a href="#">Contact</a>
 		</p>
-		<p class="footer-company-name">Hire me © 2015</p> <br />
-		<div class="footer-icons">
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-google"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-yahoo"></i></a>
-		</div>
-	</div>
-
-	<div class="footer-right">
-		<p>Contact Us</p>
-		<form action="#" method="post">
-			<input type="text" name="email" placeholder="Email">
-			<textarea name="message" placeholder="Message"></textarea>
-			<button>Send</button>
-		</form>
-
+		<p class="footer-company-name">Hire me © 2021</p> <br />
+	
 	</div>
 
 </footer>
@@ -221,32 +241,5 @@ function showSlides() {
 }
 
 
-/*Lower slider*/
-var slideIndex = 1;
-showSlide(slideIndex);
-
-function plusSlides(n) {
-  showSlide(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlide(slideIndex = n);
-}
-
-function showSlide(n) {
-  var i;
-  var slides = document.getElementsByClassName("slide");
-  var dots = document.getElementsByClassName("f_dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
 
 </script>

@@ -1,8 +1,8 @@
 <?php 
 session_start();
-require_once('./php/component.php');
-require_once('./php/list.php');
-require_once('./php/list-c.php');
+require_once('./components/component.php');
+require_once('./components/list.php');
+require_once('./components/list-c.php');
 include('./db/connection.php');
 
 ?>
@@ -15,7 +15,7 @@ include('./db/connection.php');
      <link rel="stylesheet" href="./css/search.css"/>
 </head>
 <body>
-<?php include("./header.php");?>  
+<?php include("./includes/header.php");?>  
 
 <div class="about-head">
     <br /><br /><br />
@@ -25,9 +25,9 @@ include('./db/connection.php');
 
 <br /><br />   
 
-<?php include("./search.php")?>
-<?php include("./vehicle.php")?>
- <?php include("./footer.php");?>      
+<?php include("./includes/search.php")?>
+<?php include("./includes/vehicle.php")?>
+ <?php include("./includes/footer.php");?>      
 </body>
 </html>
           

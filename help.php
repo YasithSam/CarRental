@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html>
 <head>
 	<title>Help</title>
-    <link rel="stylesheet" href="./css/home.css">
-    
+    <link rel="stylesheet" href="./css/home.css"> 
     <link rel="stylesheet" href="./css/help.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 
 </head>
 <body>
 
 
 <?php 
-include("./header.php");
-include("./functions.php");
+
+include("./db/connection.php");
+include("./includes/header.php");
 ?>
 
 <div class="help-head">
@@ -218,6 +217,6 @@ include("./functions.php");
 </div>
 <br><br><br>
 <!-- Footer -->
-<?php include("./footer.php")?>
+<?php include("./includes/footer.php")?>
 </body>
 </html>
