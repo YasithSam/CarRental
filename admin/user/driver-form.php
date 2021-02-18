@@ -9,7 +9,7 @@
 
     <div>
     <form class="form" method="post" action="./driver-add.php">
-        <h1 class="login-title">Register As A Driver</h1>
+        <h1 class="login-title">Register A New Driver</h1>
         <input type="text" class="login-input" name="name" placeholder="User Name" required />
         <input type="number" class="login-input" name="phone" placeholder="Contact Number">
         <input type="text" class="login-input" name="city" placeholder="City">
