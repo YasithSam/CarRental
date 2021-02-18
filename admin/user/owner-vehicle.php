@@ -10,7 +10,7 @@
  <link rel="stylesheet" href="../../css/addVehicle.css" type="text/css">
  <div class="body-content">
    <div class="module">
-     <h1>Register Your Vehicle</h1>
+     <h1>Register Vehicle</h1>
      <form class="form" action="./owner-vehicle-check.php" method="post" enctype="multipart/form-data">
        <div class="alert alert-error"></div>
        <input type="text" placeholder="Vehicle Title" name="title" required />
