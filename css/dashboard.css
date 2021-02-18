@@ -195,55 +195,7 @@
     color: #fff;
  }
  
- /* Responsive */
  
- @media screen and (max-width: 768px) {
-    .app-viewport {
-       grid-template-columns: var(--app-sidebar-min-width) 1fr;
-    }
-    
-    .app-header {
-       margin-left: calc(var(--app-sidebar-min-width) * -1);
-    }
-    
-    .app-icon {
-       font-size: 36px;
-       margin: 0;
-    }
-    
-    .app-branding {
-       width: var(--app-sidebar-min-width);
-       padding: 0;
-       justify-content: center;
-    }
-    
-    .app-brand {
-       display: none;
-    }
-    
-    .app-sidebar-menu > li {
-       width: var(--app-sidebar-min-width);
-    }
-    
-    .app-sidebar-menu > li > a {
-       display: block;
-       text-align: center;
-    }
-    
-    .app-sidebar-menu > li > a > span {
-       display: none;
-    }
-    
-    .app-sidebar-menu > li > a > .menu-icon {
-       margin: 0;
-       padding: 0;
-       font-size: 30px;
-    }
- }
- 
- .section {
-    display: none;
- }
  
  /* Part of Demo Only */
  
@@ -336,14 +288,7 @@
     clear: both;
   }
   
-  /* Responsive columns */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
+ 
   
   /* Style the counter cards */
   .card {
@@ -355,13 +300,5 @@
   }
 
  
- @media screen and (max-width: 768px) {
-    .sparklines {
-       display: block;
-    }
-    
-    .sparklines > div {
-       margin: 0 0 20px !important;
-    }
- }
+
  
