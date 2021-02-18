@@ -9,7 +9,7 @@
 
     <div>
     <form class="form" method="post" action="./rider-add.php">
-        <h1 class="login-title">Registration for Rider</h1>
+        <h1 class="login-title">Registration A New Rider</h1>
         <input type="text" class="login-input" name="name" placeholder="User Name" required />
         <input type="email" class="login-input" name="email" placeholder="Email Adress" required/>
         <input type="date" class="login-input" name="dob" placeholder="Date of Birth">
