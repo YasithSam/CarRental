@@ -6,15 +6,17 @@
   
 ?>
   
-
-
+<html>
+  <head>
+  <link rel="stylesheet" href="../../css/addVehicle.css" type="text/css">
+  </head>
+</html>
+<body>
  
- <link rel="stylesheet" href="../../css/addVehicle.css" type="text/css">
- <div class="body-content">
    <div class="module">
      <h1>Add New Vehicle</h1>
-     <form class="form" action="../vehicle-form.php" method="post">
-       <div class="alert alert-error"></div>
+     <form class="form" action="../vehicle-form.php" method="post" enctype="multipart/form-data">
+       
        <input type="text" placeholder="Vehicle Title" name="title" required />
        <select aria-label="Select menu example" name="brand" required>
                 <?php  
@@ -36,8 +38,8 @@
        <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
      </form>
    </div>
- </div> 
 
+ </body>
  <?php
  }
  else{
