@@ -24,8 +24,6 @@ $row = mysqli_fetch_assoc($result);
                 $dob =$_REQUEST['dob'];
                 $contact =$_REQUEST['phone'];
                 $city =$_REQUEST['city'];
-                $sql="Select * from users where id='".$uname."'";
-                $result = mysqli_query($con, $sql);
                 $update="update users set  
                 user_name='".$uname."',email='".$email."',dob='".$dob."',contact_no='".$contact."',city='".$city."'
                  where id='".$id."'";
