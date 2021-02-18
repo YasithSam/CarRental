@@ -20,7 +20,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type']
     <div class="module">
         <h1>Add a Booking</h1>
         <form class="form" action="./book-form.php" method="post">
-        <div class="alert alert-error"></div>
+        
         <input type="hidden" id="u_id" name="u_id" value="<?php echo $u_id?>" required />
         <input type="hidden" id="ow_id" name="ow_id" value="<?php echo $ow_id?>" required />
         <label>
