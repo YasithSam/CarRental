@@ -23,13 +23,11 @@ label{
 
 input{
   margin-right:8px;
-  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;/* inset for 3d border*/
   width: 100%;
-  transition: all 0.2s ease-in-out;
 }
 button, input{
   border:0;
-  outline:0;
   font-size:22px;
   color:#0000;
   border-radius: 320px;
@@ -70,7 +68,6 @@ button, input{
   line-height: 40px;
   text-align: center;
   background: none;
-  transition: background .3s ease;
 }
 .btn--primary {
   background-color:red;

@@ -1,6 +1,5 @@
-*,
-*::before,
-*::after {
+*
+{
   box-sizing: border-box;
 }
 
@@ -11,10 +10,7 @@ body {
   font-weight: 400;
   letter-spacing: 0;
   padding: 1rem;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
+ 
   
 }
 img {
@@ -43,6 +39,7 @@ img {
 .cards__item {
   display: flex;
   padding: 1rem;
+  width: 33.33%;
 }
 
 .card {
@@ -72,17 +69,11 @@ img {
   filter: contrast(70%);
   overflow: hidden;
   position: relative;
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
 .card__image::before {
   content: "";
   display: block;
   padding-top: 56.25%;
-}
-@media (min-width: 40rem) {
-  .card__image::before {
-    padding-top: 66.6%;
-  }
 }
 
 .card__title {
@@ -91,15 +82,4 @@ img {
   font-weight: 300;
   text-transform: uppercase;
 }
-@media (min-width: 56rem) {
-  .cards__item {
-    width: 33.3333%;
-    height: auto;
-  }
-}
-@media (min-width: 56rem) {
-  .cards__item {
-    width: 33.3333%;
-    height: auto;
-  }
-}
+
