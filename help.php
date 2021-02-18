@@ -10,9 +10,10 @@
 
 
 <?php 
-
+session_start();
 include("./db/connection.php");
 include("./includes/header.php");
+
 ?>
 
 <div class="help-head">
