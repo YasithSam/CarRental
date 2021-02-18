@@ -1,12 +1,10 @@
-html {
-    display: table;
-    margin: auto;
+html { 
+    margin: 10px 500px;
 }
 body {
     background-color: rgb(0, 0, 0);
     vertical-align: middle;
-    display: table-cell;
-    vertical-align: middle
+    
 }
 
 .form {
@@ -34,9 +32,6 @@ body {
     margin-right:8px;
     box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
     width: 100%;
-    transition: all 0.2s ease-in-out;
-    appearance:none;
-    -webkit-appearance:none;
   }
   button, input{
     border:0;
@@ -56,12 +51,9 @@ body {
     padding: 10px;
     margin-bottom: 25px;
     height: 25px;
-    width: calc(100% - 23px);
+  
   }
-  .login-input:focus {
-    border-color:#000;
-    outline: none;
-  }
+
   .login-button {
     border:0;
     outline:0;
@@ -81,7 +73,6 @@ body {
     line-height: 40px;
     text-align: center;
     background: none;
-    transition: background .3s ease;
   }
   .btn--primary {
     background-color:red;
