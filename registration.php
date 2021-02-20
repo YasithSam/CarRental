@@ -29,6 +29,6 @@ body{background-image:url(Assets/b.jpg);
         <p class="link"><a href="index.php" style="color:white;">Click to Login</a></p>
     </form>
 
- 
+ <script src="./js/validation.js"></script>
 </body>
 </html>
