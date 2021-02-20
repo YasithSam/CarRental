@@ -55,14 +55,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && $_SESSION['type']
                   <?php  echo $row["contact_no"];?>          
                 </div>
               </div>
-              <div id='userbio'>
-                <div id='biotext'>
-                  Address:
-                </div>
-                <div id='biolinks'>
-                  <?php  echo $row["address"];?>          
-                </div>
-              </div>
+             
               
               <div id='linkbtn'><a href="logout.php" style="color:white">Logout</a>
               
