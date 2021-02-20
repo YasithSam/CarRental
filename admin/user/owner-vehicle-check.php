@@ -35,7 +35,7 @@
              $sql = "INSERT INTO vehicles(owner_id,vehicle_title,vehicles_brand,seats,price_per_km,city,vimage1) VALUES ('$id','$title', '$brand_id', '$seat','$price','$city','$fileName')";
              $result = mysqli_query($con, $sql);      
              if ($result){        
-                 header("Location: ../users.php");
+                 header("Location: ../drivers.php");
              }
              else{
                  header("Location: ./owner-vehicle.php");

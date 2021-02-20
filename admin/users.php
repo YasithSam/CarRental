@@ -139,7 +139,7 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
                             <th>Email</th>
                             <th>Contact Number</th>
                             <th>Date of Birth</th>
-                            <th>Address</th>
+                         
                             <th>City</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -158,7 +158,6 @@ if (isset($_SESSION['user_name']) && $_SESSION['type'] ==='admin') {
                                     <td><?php echo $row["email"]; ?></td>
                                     <td><?php echo $row["contact_no"]; ?></td>
                                     <td><?php echo $row["dob"]; ?></td>
-                                    <td><?php echo $row["address"]; ?></td>
                                     <td><?php echo $row["city"]; ?></td>
                                     <td>
                                     <a href="./user/edit.php?id=<?php echo $row["id"]; ?>">Edit</a>

@@ -21,7 +21,6 @@ include "../../db/connection.php";
      
      if($pass !== $re_pass){
         header("Location: ./rider-form.php?error=The confirmation password  does not match");
-        echo "<script type='text/javascript'>alert('passwords doesn't match');</script>";
 	    exit();
 	}
      $pass = md5($pass);

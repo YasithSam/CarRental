@@ -16,7 +16,7 @@ $row = mysqli_fetch_assoc($result);
         
             <?php
             $status = "";
-            if(isset($_POST['new']) && $_POST['new']==1)
+            if(isset($_POST['new']))
             {
                 $id=$_REQUEST['id'];
                 $uname =$_REQUEST['name'];

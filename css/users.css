@@ -1,193 +1,41 @@
-* {
-    --primary-color: #00000;
-    --highlight-color: #3282b8;
-  
-    --dt-status-available-color: greenyellow;
-    --dt-status-away-color: lightsalmon;
-    --dt-status-offline-color: lightgray;
-  
-    --dt-padding: 12px;
-    --dt-padding-s: 6px;
-    --dt-padding-xs: 2px;
-  
-    --dt-border-radius: 3px;
-  
-    --dt-background-color-container: #ffffff;
-    --dt-border-color: var(--secondary-color);
-    --dt-bg-color: var(--highlight-color);
-    --dt-text-color: var(--primary-color);
-    --dt-bg-active-button: var(--highlight-color);
-    --dt-text-color-button: var(--primary-color);
-    --dt-text-color-active-button: var(--primary-color);
-    --dt-hover-cell-color: var(--highlight-color);
-    --dt-even-row-color: var(--secondary-color);
-    --dt-focus-color: var(--highlight-color);
-    --dt-input-background-color: var(--secondary-color);
-    --dt-input-color: var(--primary-color);
-  }
-  
-  .material-icons {
+.datatable-container {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  border-radius: 3px;
+  color: #000000;
+  max-width: 1000px;
+  min-width: 80%;
+  margin: 30px 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 18px;
+}
+
+
+.datatable-container .datatable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.datatable-container .datatable,
+.datatable-container .datatable th,
+.datatable-container .datatable td {
+  padding: 12px 12px;
+}
+
+.datatable-container .datatable th {
+  font-weight: bolder;
+  text-align: left;
+  border-bottom: solid 1px;
+}
+
+.datatable-container .datatable td {
+  border-bottom: solid 1px;
+}
+
+td{
+    font-size: 14px;
+}
+th{
     font-size: 16px;
-  }
-  
-  .datatable-container {
-    font-family: sans-serif;
-    background-color: var(--dt-background-color-container);
-    border-radius: var(--dt-border-radius);
-    color: var(--dt-text-color);
-    max-width: 1000px;
-    min-width: 80%;
-    margin: 30px 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    font-size: 18px;
-  }
-  
-  .btn {
-    color: #ffffff;
-    font-size: 12px;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 4px;
-    font-weight: 400;
-    display: block;
-    width: 100%;
-    margin-top: 30px;
-    height: 40px;
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: #84deee;
-  }
-  
-
-  
-
-  .datatable-container .header-tools {
-    border-bottom: solid 1px var(--dt-border-color);
-    padding: var(--dt-padding);
-    padding-left: 0;
-    display: flex;
-    align-items: baseline;
-  }
-  
-  .datatable-container .header-tools .search {
-    width: 30%;
-  }
-  
-  .datatable-container .header-tools .search .search-input {
-    width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-   
-    padding: 0.375rem 0.75rem;
-    background-color: var(--dt-input-background-color);
-    display: block;
-    box-sizing: border-box;
-    border-radius: var(--dt-border-radius);
-    border: solid 1px var(--dt-border-color);
-    color: var(--dt-input-color);
-  }
-  
-  .datatable-container .header-tools .tools {
-    width: 70%;
-    margin-right: 5px;
-  }
-  
-  .datatable-container .header-tools .tools ul {
-    margin-right: 30px;
-    margin-left: 500px;
-    display: flex;
-    justify-content: end;
-    align-items: baseline;
-  }
-  
-  .datatable-container .header-tools .tools ul li {
-    display: inline-block;
-    align-items: baseline;
-    justify-content: end;
-  }
-  
-  .datatable-container .footer-tools {
-    padding: var(--dt-padding);
-    display: flex;
-    align-items: baseline;
-  }
-  
-  .datatable-container .footer-tools .list-items {
-    width: 50%;
-  }
-  
-  .datatable-container .footer-tools .pages {
-    margin-left: auto;
-    margin-right: 0;
-    width: 50%;
-  }
-  
-  .datatable-container .footer-tools .pages ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-end;
-  }
-  
-  .datatable-container .footer-tools .pages ul li {
-    display: inline-block;
-    margin: 0 var(--dt-padding-xs);
-  }
-  
-  .datatable-container .footer-tools .pages ul li button,
-  .datatable-container .header-tools .tools ul li button {
-    color: var(--dt-text-color-button);
-    width: 100%;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: var(--dt-border-radius);
-    background: transparent;
-    cursor: pointer;
-  }
-  
-  .datatable-container .footer-tools .pages ul li button:hover,
-  .datatable-container .header-tools .tools ul li button:hover {
-    background: var(--dt-bg-active-button);
-    color: var(--dt-text-color-active-button);
-  }
-  
-  .datatable-container .footer-tools .pages ul li span.active {
-    background-color: var(--dt-bg-color);
-    border-radius: var(--dt-border-radius);
-  }
-  
-  .datatable-container .footer-tools .pages ul li button,
-  .datatable-container .footer-tools .pages ul li span,
-  .datatable-container .header-tools .tools ul li button {
-    padding: var(--dt-padding-s) var(--dt-padding);
-  }
-  
-  .datatable-container .datatable {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  .datatable-container .datatable,
-  .datatable-container .datatable th,
-  .datatable-container .datatable td {
-    padding: var(--dt-padding) var(--dt-padding);
-  }
-  
-  .datatable-container .datatable th {
-    font-weight: bolder;
-    text-align: left;
-    border-bottom: solid 1px var(--dt-border-color);
-  }
-  
-  .datatable-container .datatable td {
-    border-bottom: solid 1px var(--dt-border-color);
-  }
-  
-  td{
-      font-size: 14px;
-  }
-  th{
-      font-size: 16px;
-  }
-  
+}

@@ -1,8 +1,9 @@
-/*Home page css---------------*/
+
 
 /*Header---------------*/
 
-:root {
+/* Used css variables*/
+*{
     --darkgray: #212329;
     --brightred: #F9423D;
     --white: #FFF;
@@ -76,62 +77,6 @@ body {
 }
 
 
-/*Header login button---------*/
-
-.header-right button {
-	cursor: pointer;
-	position: relative;
-	padding: 20px;
-	border-radius: 3.75rem;
-	line-height: 1.5rem;
-	font-size: 1.5rem;
-    font-weight: 650px;
-    border: 1px solid #0496af;
-	background-image: linear-gradient(-180deg, #0496af , #003859 );
-	box-shadow: 0 1rem 1.25rem 0 rgba(85, 96, 124, 0.5),
-							0 -0.25rem 1.5rem #020747 inset,
-							0 0.75rem 0.5rem rgba(87, 92, 138, 0.329) inset,
-							0 0.25rem 0.5rem 0 rgb(76, 69, 78) inset;
-}
-
-button span {
-    font-size: 20px;
-	color: transparent;
-	background-image: linear-gradient(0deg, #f7f7f7 0%, #FEFAFD 100%);
-	-webkit-background-clip: text;
-	background-clip: text;
-	filter: drop-shadow(0 2px 2px rgb(0, 0, 0));
-}
-
-/*Navigation bar ------------*/
-
-.nav {
-    overflow: hidden;
-    background-image:linear-gradient(to right, #003859, #006492);
-    padding: 10px;
-}
-  
-.nav a {
-    float: left;
-    color: rgb(250, 249, 249);
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: arial;
-    font-weight: bold;
-    line-height: 25px;
-    border-radius: 0px;
-}
-
-/*Backgroung image----------*/
-
-.body img.bg {
-    width: 100%;
-    height: auto;
-}
-
-
 /*Description----------*/
 
 .description h1 {
@@ -142,7 +87,6 @@ button span {
     font-size: 37px;
 	color: transparent;
 	background-image: linear-gradient(0deg, #0e0b0b 0%, #060325 100%);
-	-webkit-background-clip: text;
 	background-clip: text;
 	filter: drop-shadow(0 2px 2px #003859);
 }
@@ -214,7 +158,7 @@ section {
 	display:inline-block;
 	line-height: 1.8;
 	text-decoration: none;
-	color:  inherit;
+	
 }
 
 .footer-distributed .footer-company-name{
@@ -264,18 +208,6 @@ section {
 	padding: 18px;
 }
 
-.footer-distributed ::-webkit-input-placeholder {
-	color:  #5c666b;
-}
-
-.footer-distributed ::-moz-placeholder {
-	color:  #5c666b;
-	opacity: 1;
-}
-
-.footer-distributed :-ms-input-placeholder{
-	color:  #5c666b;
-}
 
 
 .footer-distributed form input{
@@ -297,6 +229,8 @@ section {
 	font-weight: bold;
 	float: right;
 }
+
+
 
 
 /* About US-------------*/
@@ -386,97 +320,11 @@ body {font-family: Verdana, sans-serif;}
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  
 }
 
 .active_dot {
   background-color: #717171;
 }
 
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-
-/*Feedback slider*/
-
-.head-container{
-    font-size: 50px;
-    background-color: black;
-    color: blanchedalmond;
-    text-align: center;
-    font-family: Avantgarde;
-    margin-top: 0;
-    padding: 0;
-}
-
-* {box-sizing: border-box}
-
-
-.slideshow-containers {
-    position: relative;
-    background-color: black;
-    color: blanchedalmond;
-}
-
-.slide {
-    padding: 80px;
-    text-align: center;
-  }
-
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -30px;
-    padding: 16px;
-    color: #888;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-
-  .next {
-    position: absolute;
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-  }
-  /* Add an italic font style to all quotes */
-q {font-style: italic;}
-
-/* Add a blue color to the author */
-.author {color: cornflowerblue;}
-
-/* The dot/bullet/indicator container */
-.dot-container {
-    text-align: center;
-    padding: 20px;
-    background: rgb(0, 0, 0);
-}
-
-/* The Feedback Dots */
-.f_dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-/* Add a background color to the active dot/circle */
-.active, .dot:hover {
-    background-color: #ffffff;
-  }
 

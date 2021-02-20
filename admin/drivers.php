@@ -82,19 +82,8 @@
     font-weight: bold;
     color: #f1f1f1;
   }
+
   
-  .close:hover,
-  .close:focus {
-    color: #f44336;
-    cursor: pointer;
-  }
-  
-  /* Clear floats */
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 </style>
 
 <?php 

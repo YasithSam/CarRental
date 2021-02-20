@@ -12,7 +12,6 @@
    <div class="module">
      <h1>Register Vehicle</h1>
      <form class="form" action="./owner-vehicle-check.php" method="post" enctype="multipart/form-data">
-       <div class="alert alert-error"></div>
        <input type="text" placeholder="Vehicle Title" name="title" required />
        <select aria-label="Select menu example" name="brand" required>
                 <?php  
